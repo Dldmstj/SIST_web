@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>&lt;link&gt;</title>
+		<link type="text/css" rel ="stylesheet" href="z01_myStyle.css">
+		<!-- 
+			css 공통 파일을 웹서버의 절대 위치로 지정해서 호출처리
+			# 보통 자원에 대한 호출 방법은 절대 위치를 지정한다.
+			1. 자원: 호출할 css, 호출할 js(javascript파일), 이미지파일(화면에 출력할 이미지), 
+				파일 다운로드(링크를 통해 사용할 파일), 페이지 이동파일(화면에 하이퍼링크를 통해 페이지가 이동할 파일)
+			2. 절대위치 적용 : webapp(물리적 기준)과 /프로젝트명/ 경로가 웹서버를 기동하였을 때, 동일한 위치이므로
+						이 위치를 기준으로 하위 폴드와 파일들을 접근한다.
+		 -->
+		<style type="text/css">
+		/*
+		# 외부 스타일 시트 파일 불러오기
+		1. css 파일에 스타일 시트 저장하기
+			1) 웹 페이지에서 css 스타일 시트 파일을 뷹러와서 사용
+				- 동일한 스타일 시트를 웹 페이지마다 중복작성시 활용
+				- 웹 사이트의 전체 웹 페이지 모양의 일관성 확보목적
+		2. css 스타일 시트파일을 불러오는 두가지 방법
+			1)link 태그 이용
+				head
+					link href="파일명.css" type="text/css" rel="stylesheet = ""
+					
+			2) @import 이용
+				style
+					@import:url(파일명.css)
+					@import '파일명.css'
+		
+		*/
+		</style>
+	</head>
+	<body>
+		<h2>손연재</h2>
+		<hr>
+		<p>저는 체조 선수 손연재 입니다. 음악을 들으면서 책읽기를 좋아합니다.
+			김치찌개와 막국수 무척 좋아합니다.</p>
+		<!-- 
+			ex) margin-left, margin-right, text-align 속성을 추가하여 z02_style.css 만들고,
+				위키백과에 oracle database, java, bootstrap을 검색하여 타이틀과 내용으로 해당 css가 적용되게 출력하세요.
+		 -->
+	</body>
+</html>

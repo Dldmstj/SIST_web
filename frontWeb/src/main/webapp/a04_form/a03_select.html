@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- 
+		# select 태그
+		1. 콤보 모양의 단일 또는 다중 데이터를 선택해서 서버에 전송할 때 사용된다.
+		2. 기본 형식
+			<select name="서버전송시 key">
+				<option value="1000">인사</option>
+				<option value="1000">재무</option>
+				<option value="1000">회계</option>
+				<option value="1000">기획</option>
+			</select>
+			name에 있는 값으로 서버에 전송할 key를 지정하고 option에 있는 선택된 value 값으로 key=value형식으로 서버에 전송
+		3. 기본적으로 단일 데이터를 전송하나, size와 multiple이라는 속성에 의해 다중 선택도 가능하게 처리할 수 있고,
+		4. option value를 통해 화면에 보이는 label과 실제 서버에 전송되는 데이터를 다르게 설정할 수도 있다.
+		 -->
+		 
+		 <form>
+			 부서선택 1:
+		 	<select name="dept">
+				<option value="1001">인사</option>
+				<option value="1002">재무</option>
+				<option value="1003">회계</option>
+				<option value="1004">기획</option>
+			</select><br>
+			부서선택 2:
+		 	<select name="deptStr">
+		 	<!-- 보이는 label과 서버에 실제 전달될 값이 같을 때 -->
+				<option>인사</option>
+				<option>재무</option>
+				<option>회계</option>
+				<option>기획</option>
+			</select><br>
+			<input type="submit">
+		 </form>
+		 <!-- 
+		 	dept=1003&deptStr=회계
+			option에 value 속성이 있으면 항목별로 value의 값이 넘어가고,
+			value속성이 없으면, label의 값이 value로 자동 설정되어 전송됨.
+			
+			ex) 사원번호와 이름이 다음과 같이 mapping될 때, 
+				사원명을 선택해서 서버에 empno로 사원번호가 넘어가게 처리하세요
+						사원번호	사원명
+						7001	홍길동
+						7002	김길동
+						7003	신길동
+						7004	오길동
+			 -->
+			 <br><br>
+			<h2> 사원번호 선택 및 전송 </h2>
+			<form>
+				사원번호: 
+				<select name="empno">
+					<option value = "7001">홍길동</option>
+					<option value = "7002">김길동</option>
+					<option value = "7003">신길동</option>
+					<option value = "7004">오길동</option>
+				</select><br>
+			<!-- 사원명: 
+				<select name="empno">
+					<option>홍길동</option>
+					<option>김길동</option>
+					<option>신길동</option>
+					<option>오길동</option>
+				</select><br>	-->
+				<input type="submit"/>  
+			</form>
+	</body>
+	<!-- form 데이터의 정렬을 위해 table 구조 하에 입력 
+	<table>
+		<caption>로그인</caption>
+		<tr>
+			<th>아이디</th>
+			<td><input type ="text" name="id"/></td>
+		</tr>
+		<tr>
+			<th>패스워드</th>
+			<td><input type ="text" name="id"/></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<intput type="submit" value="로그인"/>
+			</td>
+			
+		</tr>
+	
+	</table>
+	-->
+	<form>
+		<table>
+			<caption>로그인</caption>
+			<tr>
+				<th>아이디</th>
+				<td><input type ="text" name="id"/></td>
+			</tr>
+			<tr>
+				<th>패스워드</th>
+				<td><input type ="password" name="pass"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center">
+					<intput type="submit" value="로그인"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!--  # 화면 입력 처리시 주로 사용되는 속성과 속성값
+		1. input 태그에서 사용되는 속성
+		2. 기본 형식
+			<input type="text"
+			
+		3. 속성 
+			1) name =""요소이름" 서버에 전동시 요청 key로 사용된.
+			2)type: "text|passeord|radio|file..." 등 화면에서 입력 모양에 따라 여러가지 피해 속성 지정가능하다.
+					(a01_input_type.html파일 참고)
+			3) size: 화면에 보이는 문자입력 크기 지정
+					입력으로 처리되는 넓이를 지정해준다. 어느 정도 입력 크기가 한정되어 있기에 더 적은 범위나 넓은 범위는 css로 속성을 지정해야 한다.
+						ps) <input style="width:30px"/>
+			4) maxlength : size와 구별되는데, size 입력은 보이는 내용이라면, maxlength는 실제 입력할 수 있는 데이터의 크기를 지정한다.
+						만약에 size="5"이고 maxlength="20" 이라면 보이는 크기는 5이지만 실제 옆으로 더 들어가서 데이터를 20까지 입력할 수 있는
+						것을 말한다.
+			5) value : 초기값으로 설정하여 입력한 데이터를 지정할 때, 처리된다. 보통 이 값을 입력하면 변경이 된다. 실제 서버에 전달되는 값이다.
+						ps) name, value 속성은 backend로 전송할 때 핵심 속성이다.
+						&(name) = (value)
+			6) placeholder: 실제 데이터가 입력된 것이 아니라 해당 항목에 대한	설명을 표시할 때 활용된다. 입력하려고 클릭하는 순간 사라짐.	
+			-->
+			보이는 크기 지정(size): <input type="text" size="5" maxlength="5"/><br>
+			실제 입력할 크기 지정(maxlenghth): <input type="text" size="5" maxlength="15"/>
+		<!-- 
+			ex) 아래 항목을 table안에 레이블과 함께 출력하되, size와 maxlength를 활용하여 출력되게 하세요.
+			구매정보
+			물건명	[7자이내]	=> 7자이내
+			가격		[		] => 만단위 숫자 이내
+			갯수		[] => 1단위 숫자
+					[구매]
+		 -->
+		 <form>
+		 	<table border>
+		 	<caption>구매정보</caption>
+		 		<tr>
+		 			<th>물건명</th>
+		 			<td><input type="text" name="product" maxlength="7" placeholder="7자이내"/></td>
+		 		</tr>
+		 		<tr>
+		 			<th>가격</th>
+		 			<td><input type="text" name="price" maxlength="5" placeholder=""/></td>
+		 		</tr>
+		 		<tr>
+		 			<th>갯수</th>
+		 			<td><input type="text" name="cnt" maxlength="1" placeholder=""/></td>
+		 		</tr>
+		 		<tr>
+		 			<th colspan="2"><input type="submit" value="구매" /></th>
+		 		</tr>
+		 	</table>
+		 </form>
+		 
+	</body>
+</html>

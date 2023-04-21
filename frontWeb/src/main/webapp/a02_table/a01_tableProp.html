@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			/* table{
+				border-collapse:collapse;
+				border: 2px solid green;
+			}
+			th,td{
+				border: 1px solid green;
+				
+			}*/
+			
+			
+				/* 화면에 있는 모드 border를 붕괴시킴
+					border: 굵기, 형태, 색상 */
+		</style>
+	</head>
+	<body>
+		<!-- 
+		# 표만들기 table
+		1. 웹화면에 2차원(행/열)이 있는 데이터가 업무 프로그램에서는 많이 활용된다. 또한 이미지 게시물 형태로 데이터를 리스트해서
+			행/열로 나타내는 경우도 많다. 이와같이 데이터를 효과적으로 행/열 형식으로 리스트하는 화면이 많은데, 이를 가장 잘 처리해주는
+			태그가 테이블이라고 할 수 있다.
+		2. 기본 테이블 구성요소
+			1) 테이블은 table이라는 태그 하위에 thread(table header) tbody(table body), tfoot(table footer)로
+				바로 밑 구성요소와 함께 (범위를 지정하는 부분으로, 생략이 가능하다.)
+			2) tr(table row)로 테이블의 행단위를 처리하고, 그 하위에 th(table head) 테이블의 타이틀을 처리하는 항목과
+				td(table data) 테이블의 열단위 데이터를 처리하는 항목으로 구성되어 있다.
+					
+		3. 기본 구성 형식
+			1) 내용 요소인 thead, tbody, tfoot 이 포함되어있는 경우
+				<table>
+					<caption>테이블 타이틀</caption>
+					<col width="넓이단위">
+						각 컬럼의 넓이를 지정처리
+						예를 들어 5개의 열이 있을 때, 열마다 넓이를 지정하지 않으면, 각 열의 데이터 크기에 따라
+						일관성 없이 지정되는 경우가 있기 때문에, 상단에 col width로 일반적으로 % 단위로 지정한다.
+						<col width="20%"><col width="30%"><col width="25%">
+						<col width="25%"><col width="25%">
+						no	이름	국어	영어	수학	평균
+					<thead>
+						<tr>
+							<th>번호</th><th>이름</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td><td>홍길동</td>
+						</tr>
+						<tr>
+							<td>2</td><td>김길동</td>
+						</tr>
+						<tr>
+							<td>3</td><td>신길동</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>전체인원</th><td>3명</td>
+						</tr>
+					</tfoot>
+				</table>
+			2) 내용 요소를 생략한 경우
+				<table align="center" width="80%">
+					전체 화면대비 중앙정렬, 전체 화면대비 테이블의 비율
+					<col width="30%"><col width="70%">
+					<tr><th>번호</th><th>이름</th></tr>
+					<tr><th>1</th><th>홍길동</th></tr>
+					<tr><th>2</th><th>김길동</th></tr>
+					<tr><th>3</th><th>신길동</th></tr>
+				</table>
+				ps)
+				 정렬 관련 내용: 태그마다 기본적으로 정렬을 지원하는 태그가 있고, 그렇지 않은 태그가 있음.
+				 h1~h6, p내부에 있는 데이터 정렬을 지정. align
+				 table 외부 화면 전체에서 이 테이블의 위치 정렬 align
+				 그 외에 기본 태그로 정렬이 지원하지 않는 것을 css로 설정한다.
+					 태그명{text-align:정렬;}
+					 css 각 셀(td) 안에 문자열의 중앙정렬 처리시
+					 td{text-align:center;}
+				 
+		4. 테이블의 속성
+			1) 테이블의 테두리의 두께와 넓이, 폭 등 여러가지 속성을 지정할 수 있다. 태그 자체 기본 속성
+			2) 주요 속성 내용
+				- border: 테이블 테두리의 cell의 굵기를 설정한다. 설정하지 않으면 cell 자체가 나타나지 않는다.
+							기본적으로 둘러싼 테두리 굵기를 지정하고, cell간을 border로 출력되게 한다.
+						주의) cell단 border의 굵기는 지정하지 않는다.
+						table border="5"
+						
+				- width/height: 테이블의 넓이와 높이를 처리한다.
+					설정단위	- 절대단위: pt, px
+							- 상대단위: % - 전체 브라우저 대비 테이블 크기
+					width = "80%" 전체 화면에서 table의 넓이를 설정
+					height : 상대단위 내용보다는 절대로 설정을 해준다.
+						상대단위 %는 크기가 일정치 않아서 적용이 되지 않는다.
+				- align: 전체 화면에서 table의 좌우정렬 설정
+				- cellpadding: 보더와 글자사이 간격
+					td(cell)안에 글자를 둘러쌓고 있는 border의 간격을 지정할 때 사용하는 옵션
+				- cellspacing: 내부 보더의 굵기
+					td(cell)간의 굵기를 지정한다.
+				# 기타 css 설정기능
+				테이블은 일반적으로 border가 2d로 2층 모양이다.
+				이러한 border를 1라인으로 처리하려면 css속성으로 border-collapse옵션 처리를 해야한다.
+					- serparate : default
+					- collapse : border을 한 라인으로 처리하는 옵션
+		 -->
+		 
+		 <!-- 
+		 	ex) 3X3 테이블로 위의 기본 속성을 적용해 테이블을 만들어 보세용.
+		  -->
+		  
+		  <h3>3X3테이블의 속성</h3>
+		  <!-- 
+		  	1. css는 head부분에 style로 설정하면 전체화면에 적용
+		  	2. 태그명 style="css속성:속성" 해당 태그에서만 적용
+		  	3. 중간에 <style>코드를 삽입해서 지정하면 해당 라인 이후에 전부 적용
+		  	4. css 적용의 우선순위는 : 
+			  	1) 해당 태그가 최우선 순위이고, (안에서 style 속성으로 선언한 css)
+			  	2) 그 다음 하단의 body에서 선언한 태그
+			  	3) 그 다음 상단에 선언한 css
+			  	4) 마지막 파일 단위로 선언한 태그이다.
+			  	
+			  	css의 border옵션 : border의 굵기에 관련된 옵션을 설정
+			  	굵기 모양 색상
+		   -->
+		  
+		  
+		  <h3>테이블 만들기 3X3 </h3>
+		  <table style = "border-collapse:collapse;
+				border: 2px solid green;" cellspacing="10pt" border="3" align="center" width="50">
+		 			<tr><td>O</td><td>O</td><td>O</td></tr>
+		 			<tr><td>O</td><td>O</td><td>O</td></tr>
+		 			<tr><td>O</td><td>O</td><td>O</td></tr>
+		  </table>
+		  <!-- 
+		  	<style> </style>
+		   -->
+		 <h2>테이블의 계층별 구성요소</h2>
+		 	<table cellspacing="10pt" border="5" align="center" width="40%">
+		 		<thead>
+					<tr>
+						<th>번호</th><th>이름</th>
+					</tr>	
+		 		</thead>
+		 		<tbody>
+		 			<tr>
+						<td>1</td><td>홍길동</td>
+					</tr>
+					<tr>
+						<td>2</td><td>김길동</td>
+					</tr>
+					<tr>
+						<td>3</td><td>신길동</td>
+					</tr>
+		 		</tbody>
+		 		<tfoot>
+		 			<tr>
+						<th>전체인원</th><td>3명</td>
+					</tr>
+		 		</tfoot>
+		 	</table>
+		 	<br>
+		 	<!--  ex) 타이틀로 이름 html(과목명) css(과목명) 데이터로 @@@ 80 90 3명의 이름과 점수를 입력되게 하고
+		 			마지막 하단에 합으로 총계가 출력되도록 -->
+		 			
+		 		<table border="1">
+		 			<caption>1학기 성적</caption>
+			 		<thead>
+			 			<tr>
+			 				<th>이름</th><th>html</th><th>css</th>
+			 			</tr>
+			 		</thead>
+			 		<tbody>
+			 			<tr>
+			 				<td>짱구</td><td>60</td><td>90</td>
+			 			</tr>
+			 			<tr>
+			 				<td>철수</td><td>100</td><td>100</td>
+			 			</tr>
+			 			<tr>
+			 				<td>훈이</td><td>70</td><td>80</td>
+			 			</tr>
+			 		</tbody>
+			 		<tfoot>
+				 		<tr>
+				 			<th>합</th><td>230</td><td>270</td>
+				 		</tr>
+				 		<tr>
+				 			<th>평균</th><td>77</td><td>90</td>
+				 		</tr>
+			 		</tfoot>
+		 		</table>
+		 		
+		 		<h2>생략되어 바로 테이블을 처리한 내용</h2>
+		 		<h3>2×2테이블</h3>
+		 		<table border>
+		 			<tr><td>1행1열</td><td>1행2열</td></tr>
+		 			<tr><td>2행1열</td><td>2행2열</td></tr>
+		 		</table>
+		 		<h3>3×2테이블</h3>
+		 		<table border>
+		 			<tr><td>1행1열</td><td>1행2열</td></tr>
+		 			<tr><td>2행1열</td><td>2행2열</td></tr>
+		 			<tr><td>3행1열</td><td>3행2열</td></tr>
+		 		</table>
+		 		<!-- 
+		 			ex) 1X3 과목명 리스트
+		 				4X4 X/O 표시
+		 				2X5 회원정보
+		 				를 표시하는 테이블을 만드세요
+		 		 -->
+		 		 
+		 		 <h3>1×3 과목명 테이블</h3>
+		 		<table border>
+		 			<tr><td>java</td><td>spring</td><td>jsp</td></tr>
+		 		</table>
+		 		 <h3>4×4 O/X 테이블</h3>
+		 		<table border>
+		 			<tr><td>O</td><td>O</td><td>X</td><td>O</td></tr>
+		 			<tr><td>X</td><td>X</td><td>O</td><td>X</td></tr>
+		 			<tr><td>O</td><td>O</td><td>X</td><td>O</td></tr>
+		 			<tr><td>O</td><td>X</td><td>O</td><td>O</td></tr>
+		 		</table>
+		 		<h3>2X5 회원정보 테이블</h3>
+		 		<table border>
+		 			<tr><th>이름</th><th>아이디</th><th>주소</th><th>전화번호</th><th>회원등급</th></tr>
+		 			<tr><td>짱구</td><td>shin01</td><td>떡잎마을</td><td>010.1234.1234</td><td>S</td></tr>
+		 		</table>
+		 		<h3>2X5 회원정보 테이블</h3>
+		 		<table border>
+		 			<tr><th>순차번호</th><th>아이디</th><th>회원명</th><th>권한</th><th>포인트</th></tr>
+		 			<tr><td>1</td><td>shin09</td><td>짱구</td><td>관리자</td><td>5000</td></tr>
+		 			<tr><td>2</td><td>mang09</td><td>맹구</td><td>고객</td><td>0</td></tr>
+		 			<tr><td>3</td><td>chulS00</td><td>철수</td><td>고객</td><td>10000</td></tr>
+		 		</table>
+	</body>
+</html>

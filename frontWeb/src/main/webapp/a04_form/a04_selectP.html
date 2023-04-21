@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<!-- 
+		# select 선택형 입력의 세부 속성
+		1. 형식
+			select 속성 = 속성값
+			option value : 항목의 값을 지정
+				selected : 초기 선택되어진 항목을 출력
+		2. 속성
+			1) name : 해당 name값을 기준으로 선택된 항목(option)을 key=value형식으로 서버에 전송이 된다.
+			2) size : 화면에 보이는 문자입력 크기 지정. 입력으로 처리되는 넓이를 지정해준다. 어느정도 입력 크기가 한정되어 있기에
+						더 적은 범위나 더 넓은 범위는 css로 속성을 지정해야 한다.
+			3) multiple : ctrl 누른 상태에서 마우스 클릭으로 여러 개를 선택할 때 사용된다.
+						이렇게 여러 개 선택하면, 서버에도 배열데이터로 전송될 수 있다.
+		 -->
+		 <form>
+				 사원1(size=2): <select name="empo1" size="2">
+				 		<option value = "1000">홍길동</option>
+				 		<option value = "2000">신길동</option>
+				 		<option value = "3000">김길동</option>
+				 		<option value = "4000">마길동</option>
+				 		<option value = "5000">오길동</option>
+				 		<option value = "6000">하길동</option>
+				 </select><br>
+				 사원2(multiple): <select name="empo2" multiple>
+				 		<option value = "1000">홍길동</option>
+				 		<option value = "2000">신길동</option>
+				 		<option value = "3000">김길동</option>
+				 		<option value = "4000">마길동</option>
+				 		<option value = "5000">오길동</option>
+				 		<option value = "6000">하길동</option>
+				 </select><br>
+				 사원3(selected): <select name="empo3">
+				 		<option value = "1000">홍길동</option>
+				 		<option value = "2000">신길동</option>
+				 		<option value = "3000" selected>김길동</option>
+				 		<option value = "4000">마길동</option>
+				 		<option value = "5000">오길동</option>
+				 		<option value = "6000">하길동</option>
+				 </select><br>
+				 <!-- 초기 로딩 화면에서 default로 선택되는 option이 김길동으로 처리될 때 활용된다. -->
+				 <input type="submit" />
+		 </form>
+		 <!-- 
+		 empo1=1000
+		 &empo1=1000&empo2=1000&empo3=2000	: multiple일 때, ctrl을 통해 선택한 항목들을 전송한다
+		  -->
+		  
+		  <!-- 
+		  	ex) 성별(단일-두번째항목 선택), 좋아하는 음식(다중), 부서정보(2개 보이게 처리 - 인사, 재무, 회계, 기획, it사업부)로
+		  		combo를 처리하세요.
+		  
+		   -->
+		   <br><br>
+		   http://localhost:8080/frontWeb/a04_form/a04_selectP.html?s=m&food=bread&dept=jae
+		   
+		  <form>
+		  	<input type ="radio" name="s" value ="fem"/>여자
+		  	<input type ="radio" name="s"  value ="m"/>남자<br>
+		  	<br>
+		  	<input type ="checkbox" name="food" value ="ssal"/>밥
+		  	<input type ="checkbox" name="food"  value ="noodle"/>면
+		  	<input type ="checkbox" name="food"  value ="bread"/>빵<br>
+		  	
+		  	<select name="dept" size="2">
+		  		<option value="in">인사</option>
+		  		<option value="jae">재무</option>
+		  		<option value="hoi">회계</option>
+		  		<option value="gi">기획</option>
+		  		<option value="if">it사업부</option>
+		  	</select><br>
+		  	<input type ="submit"/>
+		  </form>
+		  
+	</body>
+</html>

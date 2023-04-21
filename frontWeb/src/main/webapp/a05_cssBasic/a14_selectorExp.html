@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+		
+            h1{background-color: chartreuse; color: brown;}
+			/*
+				#계층구조 선택자
+				1. 자식 선택자
+					1) 부모 자식 관계인 두 선택자는 '>'기호로 조합된다.
+					2) 적용은 해당 부모를 가진 자식 요소객체가 적용된다.
+					3) 기본형식
+						부모 > 자식 {속성:속성값;}
+						ex) div > stront{color; dodgerble}
+						div의 바로 밑에 strong태그가 있으면 해당
+						strong태그에는 글자색상이 dodgerblue가 적용된다.
+				2. 자손 선택자
+					1) 계층 레벨이 바로 밑을 포함해서, 여러 계층레벨이 있더라도 적용되는 경우
+					2) 이것을 자손관계라고 한다
+					3) 기본형식
+						상위 하위{속성:속성값;}
+						상위 하위{background-clolor : yellow;}
+						ul이 상위로 하위레벨에 레벨계층과 상관없이
+						strong이 있으면 배경색상이 노란색으로 처리된다.
+			*/
+				
+		</style>
+		
+		<div>
+			<strong>안녕하세요 
+			</strong>
+		</div>
+			
+	</head>
+	<body>
+        <h1>안녕하세요</h1>
+        <h2 style="font-size:larger;">반갑습니다.</h2>

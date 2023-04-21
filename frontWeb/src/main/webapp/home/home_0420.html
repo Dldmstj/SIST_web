@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+		/*
+		[1단계:확인] 4. 회원등록화면을 table안에 만들고,
+		전체선택자와 속성선택자의 단계(선택자[속성=속성값],[속성=속성값],[속성])에 따라 css가 다르게 선언된 것을 적용되게 하세요
+		*/
+		input[type=text]{background-color: #FFD9EC;}
+        [type=password]{background-color: navy; color: #FFFFFF}
+        [name=myName]{background-color: blue;}
+        [value]{background-color: #FFD9EC; border: 3px solid red;}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table border>
+				<tr>
+					<th>이름</th>
+					<td><input type="text" name="myName" placeholder="이름"/></td>
+				</tr>
+				<tr>
+					<th>닉네임</th>
+					<td><input type="text" name="myNick" placeholder="닉네임"/></td>
+				</tr>
+				<tr>
+					<th>아이디</th>
+					<td><input type="text" name="myId" placeholder="아이디"/></td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td><input type="password" name="myPw" placeholder="비밀번호"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align= center><input type="submit" value="등록"/></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

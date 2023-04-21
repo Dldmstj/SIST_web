@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<!-- 
+		[1단계:개념] 1. 링크시 상대위치 지정과 절대위치 지정 차이점을 기술하고, 
+				1) 상대위치 지정
+					현재 폴더에 특정한 파일이 있을 때 해당 페이지로 이동하여 화면을 확인할 수 있다.
+				2) 절대위치 지정
+					일반적으로 웹서버의 절대적인 경로로 해당 자원 페이지를 호출하거나 이미지를 호출할 수 있다.
+		-->
+		
+<!-- 	[1단계:개념] 2. 링크시 현재 파일을 기준으로 상위폴드와 하위폴드 이동 처리를 예제를 통해서 설명하세요.  -->
+				<!-- 상위 이동 -->
+				<h2>상위경로로 이동 (../)</h2>
+				<a href="../a01/exapmle_1.html">페이지 이동(상위경로)</a>
+				<!-- 하위 이동 -->
+				<h2>하위경로로 이동 (./)</h2>
+				<a href="./exapmle_2.html">페이지 이동(하위경로)</a>
+				<br><br>
+				
+<!-- 	[1단계:개념] 3. iframe의 속성을 예제를 통해서 설명하세요. 
+				속성 1) src =""		: 포함되는 페이지를 속성값으로 설정함
+						ex) <iframe src ="exapmle_1.html">
+								
+					2) srcdoc="" 	: ""내에 html태그를 통해서 출력형식을 바로 작성할 수 있다.
+						ex) <iframe srcdoc ="<html><body><h2>srcdoc으로 html 바로 작성하기</h2></body></html>" ..>
+					
+					3) name =""		: 각 프레임에 대한 이름을 설정할 수 있다. (자바스크립트나 target="프레임명" 등으로 사용됨)
+						ex) <iframe ... name="example_1"...>
+
+-->
+<!-- 	[1단계:확인] 4. 좋아하는 맛집 홈페이지를 맛집의 종류에 따라 링크되게 처리해보세요.		 -->
+			<h2>내가 좋아하는 맛집</h2>
+			<a href = "https://www.yupdduk.com/">떡볶이</a><br>
+			<a href = "http://www.sunuri21.com/main/main.php">감자탕</a><br>
+			<a href = "https://hanshinpocha.com/">닭발</a><br>
+			
+<!-- 	[1단계:개념] 5. target 속성값의 종류를 기술하세요.		 
+			1) _blank: 새로운 브라우저 윈도우 탭 생성.(기존 것은 그대로 두고, 다시 새로운 브라우저 창을 로딩)
+			2) _self: 현재 브라우저를 대체하는 새로운 화면을 로딩
+			3) _parent: 이 페이지를 호출하는 바로 위 부모페이지로 변경
+			4) _top: 계층구조상의 최상위 페이지로 변경
+			6) 프레임명/윈도우명: 해당 프레임이나 윈도우를 변경
+-->
+
+<!-- 	[1단계:개념] 6. input select textarea의 차이점을 기술하세요.		 
+			1) input
+				input 태그의 type에 따라 여러가지 입력 형식 중 선택할 수 있다.
+			2) select
+				단일, 또는 다중 데이터를 선택해서 서버에 전송할 때 사용할 수 있다.
+			3) textarea
+				
+-->
+<!-- 	[1단계:확인] 7. 기본 input 객체를 활용하여 아래와 같이 출력(form과 name 속성포함)하세요. 
+		                   사람등록
+		      이름   [   ]
+		      나이   [   ]
+		      사는곳   [   ]
+		          [등록]				-->
+		      <form>
+		      <h2> 개인정보 입력</h2>
+		      이름 <input type="text" name="myname"/><br>
+		      나이 <input type="number" name="myage" value="0"/><br>
+		      사는곳 <input type="text" name="myloc"/><br>
+ 		      <input type="submit" value="등록">
+ 		      </form>
+ 		      <br><br>
+<!-- 	[1단계:확인] 8. type으로 check와 radio의 차이점을 예제를 기술하세요 
+			1) checkbox
+				: 네모모양의 checkbox가 생성됨. 다중선택시 사용된다
+ -->
+				<h2>가고싶은 여행지. 다 가고싶다! </h2>
+				<input type="checkbox" name="trip" value="guam"/> 괌
+				<input type="checkbox" name="trip" value="jeju"/> 제주
+				<input type="checkbox" name="trip" value="tokyo"/> 도쿄
+				<br><br>
+<!-- 		2) radio
+				: 둥근모양의 radiobox가 생성된다. 단일선택시 사용된다.
+ -->			
+				<h2>주소지. 한 개만 선택할 수 있다!</h2>
+				<h4>국내/외</h4>
+				<input type="radio" name="con" value="국내"/>국내거주
+				<input type="radio" name="con" value="국외"/>국외거주
+				<br><br>
+
+<!-- 	[1단계:확인] 9. 출근시간대(6:00,7:00,8:00,9:00와 퇴근시간대(17:00,18:00,19:00,20:00)를 단일 선택할 수 있게 처리하세요  -->
+		      <h2>출근시간</h2>
+			  <input type="radio" name="on" value="6"/>6:00<br>
+			  <input type="radio" name="on" value="7"/>7:00<br>
+			  <input type="radio" name="on" value="8"/>8:00<br>
+			  <input type="radio" name="on" value="9"/>9:00<br>
+			  <br>
+		      <h2>퇴근시간</h2>
+			  <input type="radio" name="off" value="17"/>17:00<br>
+			  <input type="radio" name="off" value="18"/>18:00<br>
+			  <input type="radio" name="off" value="19"/>19:00<br>
+			  <input type="radio" name="off" value="20"/>20:00<br>
+			  <br>
+			  
+<!-- 	[1단계:개념] 10. form하위에 form요소객체가 서버에 데이터를 전송하는 규칙을 기술하세요.
+
+			type이 submit인 버튼 클릭시, form사이에 있는 요소 객체 name의 속성에 있는 값,
+		 	입력한 데이터 기준으로 key=value & key=value 형식으로 서버에 전송이 된다.
+				 	ex) pname=바나나 & price=3000 & cnt=2
+		 	
+		 	** 백에서는 price로 선언해놓고 프론트에서는 name 값 다른 이름으로 받지 않았는지 확인!!!!
+ -->
+				
+		
+<!-- 	[1단계:개념] 11. select form태그에서 option에서 value의 설정이유에 대하여 기술하세요.  
+					1) option에 value 속성이 있을 때
+						- 항목별로 value의 값이 넘어간다.
+					ex)
+						<select name="empno">
+						<option value = "7001">홍길동</option>
+						...
+											// empno=1003
+					2) value속성이 없을 때
+						- label의 값이 value로 자동 설정되어 전송됨.
+					ex)
+						<select name="empno">
+						<option>홍길동</option>
+						...
+											// empno=홍길동
+-->
+				
+<!-- 	[1단계:확인] 12. 주로 사용하는 지역과 우편번호를 검색해서 select로 지역을 선택했을 때, 서버에 우편번호가 전송되게 처리하세요.
+-->				
+				<form>
+					지역:
+				 	<select name="loc">
+						<option value="17047">역북동</option>
+						<option value="16998">동백동</option>
+						<option value="12781">태전동</option>
+						<option value="06212">역삼동</option>
+					</select><br>
+					<input type="submit" value="선택"/>
+				 </form>
+		
+	</body>
+</html>
