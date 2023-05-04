@@ -7,6 +7,11 @@
 		/*
 		# 배경이미지 다루기
 		1. 배경 색상과 이미지는 웹화면을 구성하는데 중요한 역할을 한다. 특히 배경이미지는 웹화면을 꾸밀 때 많이 사용된다.
+			ex)div{width:100px; height:100px; background-image:url(bck.img);
+					repeat:no-repeat;
+					}	// div크기가 100px넓이와 높이인데, 배경이미지와 이미지반복옵션을 no-repeat으로 지정처리
+							배경 이미지의 크기는 50px(상하/좌우)이고, 배경 이미지의 위치는 중앙에 위치시킨다.
+							보통 화면대비 배경이미지가 작기에 반복이 돠는데, 이 옵션이 적용되어야 함.
 		2. 배경 색상과 이미지의 상대적/절대적 경로와 함께 설정하고, 해당 내용을 통해 웹화면을 꾸며보자.
 		3. 기본 속성
 			1) background-color: 배경 색상 지정
@@ -16,14 +21,17 @@
 				  상대주소(현재 html파일이 있는 기준, ./ ../)
 		4. 기타속성
 			1) 배경 이미지의 위치
-				background-position: center center
-					행/열 위치 지정
+				background-position: center center 행/열 위치 지정
+				ex) left/center/right
+					top/center/bottom
 					선택자 중앙에 위치
 			2) 배경 이미지 반복 출력: 선택자의 범위가 이미지보다 큰 경우가 많음.
 				이 때, 남은 공간에 대한 처리를 반복할지 반복하지 않을지로 처리함.
 				반복의 경우, 행/열단위를 다 반복하는 경우와 행단위 x, 열단위로 나누어서 반복 처리하는 경우가 있다.
 				background-repeat:
 					속성값: no-repeat, repeat, repeat-x, repeat-y
+			3) 배경 이미지의 크기
+				background-size: 50px 50px;
 		
 		*/
 		div.cls01{
