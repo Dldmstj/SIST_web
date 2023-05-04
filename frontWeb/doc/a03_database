@@ -1,0 +1,12 @@
+cmd
+sqlplus
+system/1111
+scott/tiger
+테스트 계정과 비밀번호
+scott.sql		복사
+c:\User\user\ 
+		(cmd경로, sqlplus가 실행되는 곳)에 scott.sql 붙여넣기
+		
+@scott.sql
+conn scott/tiger;
+select * from emp;
