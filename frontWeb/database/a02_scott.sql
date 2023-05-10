@@ -3,33 +3,33 @@ select * from emp;
 select empno from emp;  -- ctrl+enter 
 
 select empno, ename from emp;
-        -- ex) empno, job, mgr, depno¸¦ 1,2,3,4 ¼±ÅÃÇØ¼­ Á¶È¸
+        -- ex) empno, job, mgr, depnoï¿½ï¿½ 1,2,3,4 ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½È¸
 select empno, job, mgr, deptno from emp;
 
-select deptno, empno, ename from emp;       -- ¿øÇÏ´Â ¼ø¼­´ë·Î Á¶È¸
+select deptno, empno, ename from emp;       -- ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 
-select ename, sal
+select ename, sal	/* ë³´ê²Œ ë  ì»¬ëŸ¼ ì§€ì • */
 from emp
 where sal >= 3000;
 
 select * from emp;
 
--- ex) sal ÄÃ·³ÀÌ 2000 ¹Ì¸¸ÀÎ »ç¿øÁ¤º¸ °Ë»öÇÏ±â
+-- ex) sal ï¿½Ã·ï¿½ï¿½ï¿½ 2000 ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï±ï¿½
 select * from emp where sal <2000;
 
--- ex) sal°¡ 2000ÀÌ»ó 4000¹Ì¸¸ »ç¿øÁ¤º¸ °Ë»öÇÏ±â
+-- ex) salï¿½ï¿½ 2000ï¿½Ì»ï¿½ 4000ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï±ï¿½
 select * from emp where sal >= 2000 and sal <4000;
 
--- ex) empno ±âÁØÀ¸·Î 7500¹Ì¸¸ ÀÌ°Å³ª 7800 ÀÌ»óÀÎ »ç¿øÀÇ empno,ename, sal Ãâ·ÂÇÏ±â
+-- ex) empno ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 7500ï¿½Ì¸ï¿½ ï¿½Ì°Å³ï¿½ 7800 ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ empno,ename, sal ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 select empno, ename, sal from emp where empno <7500 or empno>=7800;
 
--- = ºñ±³¿¬»êÀÚ(µ¿ÀÏµ¥ÀÌÅÍ)
--- '¹®ÀÚ¿­' : ¹®ÀÚ¿­µ¥ÀÌÅÍ Ç¥½Ã
+-- = ï¿½ñ±³¿ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½)
+-- 'ï¿½ï¿½ï¿½Ú¿ï¿½' : ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 select * from EMP;
 
--- ex) salÀÌ 1250ÀÎ »ç¿ø Á¤º¸ Ãâ·Â
+-- ex) salï¿½ï¿½ 1250ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 select * from emp where sal=1250;
--- ex) jobÀÌ CLERKÀÎ »ç¿ø Á¤º¸(empno,ename,job)Ãâ·Â
+-- ex) jobï¿½ï¿½ CLERKï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(empno,ename,job)ï¿½ï¿½ï¿½
 select empno, ename,job from emp where job ='CLERK';
 /*
     DB => ArrayList<Emp>
@@ -49,4 +49,4 @@ select * from dept;
 select * from emp;
 
 select * from emp, dept where emp.deptno = dept.deptno;
-    -- empÅ×ÀÌºíÀÇ deptno¿Í deptÅ×ÀÌºíÀÇ deptnoÀÇ ¿¬°ü°ü°è
+    -- empï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ deptnoï¿½ï¿½ deptï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ deptnoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½

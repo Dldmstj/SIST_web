@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            # form 요소 객체에 사용되는 css속성
+             1. form은 화면에서 데이터를 처리하는 중요한 요소 내용이다. 효과적으로 데이터를 입력해서 서버에 전달할 때 활용되므로,
+                ui(user interface)와 효과적이고 명시적으로 처리되어야 한다.
+             2. 주요 속성
+                1) 글자 색상 지정
+                    input[속성=속성값] {color: ...;}
+                2) 테두리 만들기
+                    선택자[속성=속성값] {
+                        border: @@ @@ @@;
+                        border-radius: 5px; 테두리 꼭지점 둥글기 설정
+                    }
+                3) 마우스 커서 위치 설정
+                    :focus{} : 커서를 위치시켰을 때
+                    :hover{}
+        */
+        #loginForm label{
+            display: block;
+            padding: 5px;
+        }
+        #loginForm label span{
+            display: inline-block;
+            width: 40%;
+            text-align: center;
+            padding: 5px;
+        }
+        #loginForm input{
+            color: purple;
+            border: 2px solid plum;
+            border-radius: 5px;
+        }
+        #loginForm input[type=text]:focus{
+            font-size: 120%;
+        }
+        #loginForm input:hover{
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginForm">
+        <form>
+            <fieldset style="width: 30%;">
+                <legend>로그인</legend>
+                <label>
+                    <span>아이디</span><br>
+                    <input type="text" placeholder="아이디"/>
+                </label>
+                <label>
+                    <span>패스워드</span><br>
+                    <input type="password" placeholder="패스워드"/>
+                </label>
+                <label>
+                    <input type="submit" value="로그인"/>
+                </label>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

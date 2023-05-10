@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        thead{
+            background-color: palevioletred;
+            color: ivory;
+        }
+        tbody{
+            text-align: center;
+        }
+        th,td{
+            padding: 5px;
+            height: 15px;
+            text-align: center;
+            width: 100px;
+        }
+
+        tr:nth-child(even){
+            background: aliceblue;
+        }
+        tbody tr{
+            background-color: mistyrose;
+        }
+        tr:hover{
+            background-color: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2> # 회원 정보 # </h2>
+    <table width="80%">
+        <thead>
+            <tr><th>아이디</th><th>이름</th><th>나이</th><th>권한</th><th>포인트</th></tr>
+        </thead>
+
+        <tbody>
+            <tr><td>sh1nJJang</td><td>짱구</td><td>5</td><td>admin</td><td>100000</td></tr>
+            <tr><td>Dolmang2</td><td>맹구</td><td>5</td><td>admin</td><td>100000</td></tr>
+            <tr><td>chu1S00</td><td>철수</td><td>5</td><td>member</td><td>5000</td></tr>
+            <tr><td>Y00r1</td><td>유리</td><td>5</td><td>member</td><td>6000</td></tr>
+            <tr><td>H00n2E</td><td>훈이</td><td>5</td><td>member</td><td>0</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
