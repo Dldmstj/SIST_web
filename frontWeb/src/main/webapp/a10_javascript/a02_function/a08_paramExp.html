@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # 매개변수 정리 문제
+        아래 문제들을 h2의 타이틀 내용 클릭시 처리되게 하세요
+        1. 매개변수의 갯수
+            1) 없는 경우
+        */
+                // 안녕하세요 출력
+                function hello(){
+                    alert("안녕하세요");
+                }
+                
+                // 카운트 증가 출력(전역변수 활용)
+                var cnt =  0;
+                function plus(){
+                    cnt++;
+                    alert(cnt);
+                }
+                // 2) 1개인 경우
+                // 등록한 사원 번호 출력(매개변수-사원번호)
+                function empno(num){
+                    alert("사원번호: " + num);
+                }
+                // 클릭할 때마다 총금액 계산(매개변수-가격, 전역변수-총금액)
+                var totPrice01 = 0;
+                function tot01(price){
+                    totPrice01 += price;
+                    alert("총 금액: " + totPrice01);
+                }
+                
+                // 3) 2개 이상인 경우
+                //     총 금액 계산(가격, 갯수 - 출력)
+                var totPrice02 = 0;
+                function tot02(price, cnt){
+                    let tot = price*cnt;
+                    totPrice02 += tot;
+                    alert("총 금액: " + totPrice02);
+                }
+       /*
+            4) 가변적인 경우
+                arguments 활용
+                학생의 점수1개~3개를 각각 호출
+        */      function score(){
+                    var scores = [];
+                    for(var i in arguments){
+                        scores.push(arguments[i]);
+                    }
+                    alert("점수: " + scores);
+                }
+
+                // ...변수명 활용
+                //     등록된 회원 아이디 1개~3개를 각각 호출
+                function member(...members){
+                    alert("회원아이디: " + members);
+                }
+       /*
+        2.매개변수의 유형
+            1) 배열인 경우
+        */
+                // 국영수 점수 배열로 전달, 평균 출력
+                function avg(arry){
+                    let tot = 0;
+                    // for(var sc in arry){
+                    //     tot += parseInt(arry[sc]);
+                    // }
+                    arry.forEach(function(arr) {
+                        tot += arr
+                    });
+                    let avg = tot/arry.length;
+                    alert("국영수: " + arry);
+                    alert("총점: " + tot);
+                    alert("평균: " + avg);
+                }
+            // 2) 객체인 경우
+            //     도서명, 출판사, 가격 json객체로 전달
+            function book(obj){
+                var show ="";
+                for(var pro in obj){
+                    show += pro + ":" +obj[pro]+"\n"
+                }
+                alert(show);
+            }
+            //     전달된 정보 출력
+            // 3) DOM인 경우
+            //     h2의 타이틀 변경 및 중앙 정렬, 배경색 변경
+            //     하단의 h3내용 변경 처리
+            function chForm(obj,align,color,backColor){
+                obj.align = align;
+                obj.style.color = color;
+                obj.style.background = backColor;
+                
+            }        
+        
+    </script>
+</head>
+<body>
+    <h2 onclick="hello()">안녕하세요 출력</h2>
+    <h2 onclick="plus()">카운트 증가</h2>
+    <h2 onclick="empno(1001)">사원 번호 출력</h2>
+    <h2 onclick="tot01(2000)">총 금액 계산1</h2>
+    <h2 onclick="tot02(1000,3)">총 금액 계산2</h2>
+    <h2 onclick="score(100)">가변: arguments1</h2>
+    <h2 onclick="score(100,70)">가변: arguments2</h2>
+    <h2 onclick="score(100,50,90)">가변: arguments3</h2>
+    <h2 onclick="member('sh1n')">가변: ...변수명1</h2>
+    <h2 onclick="member('sh1n','man900')">가변: ...변수명1</h2>
+    <h2 onclick="member('sh1n','man900','h00n2')">가변: ...변수명1</h2>
+    <h2 onclick="avg([100,90,100])">국영수 점수, 평균</h2>
+    <h2 onclick="book({title:'아기돼지삼형제',company:'@@',price:5000})">책 제목, 출판사, 가격</h2>
+    <h2 onclick="chForm(this,'center','red','orange')">DOM</h2>
+
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html> 

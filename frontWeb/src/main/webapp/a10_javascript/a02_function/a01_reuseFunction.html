@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # 함수의 첫단계 : 기능의 재활용성
+        1. 함수는 기능이 선언된 내용을 재활용성이 가장 기본적인 내용이라고 할 수 있다.
+        2. 매개변수/리턴값 없이 처리하는 기능의 재활용
+        3. 매개변수/리턴값으로 로직을 처리하거나 전역변수/지역변수에 할당하여 기능을 재활용하는 경우를
+            들 수 있다.
+        # 매개변수/리턴값 없이 기능 재활용
+        1. console.log, alert(), prompt(), confirm() 창을 활용해서 데이터를 특정하게 출력처리하고,
+        로직을 전역변수에 저장할 때, 주로 활용된다.
+        */
+        
+    </script>
+</head>
+<body>
+    <h2 onclick="showColor()">기능 재활용</h2>
+    <h3 onclick="callTot()">누적 합산</h3>
+    <!-- 클릭시마다 선언된 코드를 재활용 처리 -->
+</body>
+    <script>
+        /*
+        # 호출할 때마다 화면의 배경색상을 바꾸어 보자
+        */
+       var colors = ['yellow','blue','green']
+        function showColor(){
+            document.body.style.backgroundColor = colors[parseInt(Math.random() * 3)];
+            alert("배경색상변경");
+        }
+        var tot = 0
+        // 전역변수를 tot선언, 함수를 선언해서 클릭시마다 누적이 되어 출력할 수 있게 해보세요
+        function callTot(){
+            i++;
+            tot += i;
+            var h3Oj = document.querySelector("h3");
+            h3Oj.innerText = "누적합산 결과: " + tot;
+        }
+        
+    </script>
+</html>

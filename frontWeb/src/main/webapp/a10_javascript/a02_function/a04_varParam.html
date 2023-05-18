@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # 가변적인 매개변수 처리
+        0. 매개변수가 없을 때, 1개 또는 여러 개 있을 때
+            동일한 정의함수를 이용해서 처리하면 매개변수는 배열이나 기능내장객체를 통해서 처리하는 것을 말한다.
+        1. 단계별 처리 내용
+            1) arguments 내장 객체 사용
+            2) 매개변수명... 활용
+            3) 초기값 선언과 매개변수 처리 
+        */
+        // function buyPrd(){
+        //     // alert(arguments)
+        //     for(var idx in arguments){
+        //         array.push(arguments[idx]);
+        //         // alert(arguments[idx]);
+        //     }
+        //     alert("물건가격: " + array)
+        // }
+        // ex) 구입하는 물건을 동적으로 전달하여 1~3개 클릭시 물건명 리스트 출력하세요
+        function buyPrd02(){
+            var pnames = [];
+            for(var i in arguments){
+                pnames.push(arguments[i]);
+            }
+            alert("구매한 물건: " + pnames);
+        }
+    </script>
+</head>
+<body>
+    <h2>구매한 물건</h2>
+    <!-- <h2 onclick="buyPrd(1000)">물건 한 개</h2>
+    <h2 onclick="buyPrd(1000,2000)">물건 두 개</h2>
+    <h2 onclick="buyPrd(1000,2000,3000)">물건 세 개</h2> -->
+    <h4  onclick="buyPrd02('감자')">감자</h4>
+    <h4  onclick="buyPrd02('고구마,감자')">고구마</h4>
+    <h4  onclick="buyPrd02('옥수수','수박')">옥수수, 수박</h4>
+    <h3></h3>
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

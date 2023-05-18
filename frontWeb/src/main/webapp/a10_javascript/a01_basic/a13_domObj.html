@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        #  
+        */
+        function call01(obj){
+            alert(obj.name +":" +obj.age)
+        }
+        // ex) 클릭 시, json객체로 음식명과 가격을 전달하고, 해당 내용을 alert()로 출력하세요
+        function call02(obj){
+            alert("음식이름: " + obj.fname + "\n가격: " + obj.price);
+        }
+        // ex) json 객체로 버스의 번호, 구간, 승객 수를 속성+속성값으로 설정해서 클릭시,
+        // 해당 속성을 호출하여 출력되게 하세요.
+        function callBus(obj){
+            var show =''
+            for(var pro in obj){
+                show += pro +": " + obj[pro]+"\n";
+            }
+            alert(show);
+        }
+        function call03(obj){
+            // obj.this => h2 => 클릭한 h2 지칭
+            alert(obj.innerText)       // DOM객체 전송, 전송된 DOM객체의 출력 속성을 처리
+            obj.innerText = "🌭🍟🍔🍕🍜🍠🥩"    // 레이블 내용 변경
+            obj.align = "center"    // 속성 변경 기본 속성
+            obj.style.background = "yellow"
+        }
+        // h3를 클릭 시, 레이블을 "안녕하세요"로 변경하고, 오른쪽 정렬 처리
+        // 배경색상/글자색상 -> navy/yellow 처리
+        function call04(obj){
+            obj.innerText = "안녕하세요";
+            obj.align = "right";
+            obj.style.color ="yellow";
+            obj.style.background = "navy";
+        }
+        </script>
+</head>
+<body>
+    <h2 onclick="call01({name: '홍길동',age: 25})">JSON객체 호출 처리</h2>
+    <h2 onclick="call02({fname: '떡볶이', price: 3000})">떡볶이</h2>
+    <h2 onclick="callBus({bnum:'1001', line:'서울-경기', pCnt:40})">🚌</h2>
+    <h2 onclick="call03(this)">DOM객체 호출 처리</h2>
+    <h3 onclick="call04(this)">😃😃😃😃😃</h3>
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

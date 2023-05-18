@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        // var score = Number(prompt('학점을 입력하세요.', '학점'));
+        // // 조건문
+        // if (4.0 < score && score < 4.5) {
+        //     alert('논리 연산자를 사용해 보았습니다.');
+        // }
+        /*
+        # 논리연산식
+        1. and
+            조건문1 && 조건문2
+        2.or
+            조건문1 || 조건문2
+        3. not
+            ! 조건문
+        */
+       // 함수에 의해 DOM객체의 입력값 가져와서 login 처리
+       function login(){
+        var idObj = document.querySelector("[name=id]")
+        var pwObj = document.querySelector("[name=pw]")
+        var idVar = idObj.value;
+        var pwVar = pwObj.value;
+        console.log("id객체:" + idObj);
+        console.log("pw객체:" + pwObj);
+        console.log("id값:" + idVar);
+        console.log("pw값:" + pwVar);
+        
+        if(idVar == 'himan' && pwVar == '7777'){
+             alert("로그인 성공");
+         }else{
+            alert("로그인 실패");
+        }
+
+       }
+       // ex) idVal, pwVal을 활용해서 논리연산식으로 himan/7777 맞으면 alert()로 로그인 성공, 그 외에는 실패
+    </script>
+</head>
+<body>
+    <h3>로그인</h3>
+    아이디<input type="text" name="id"/> <br>
+    패스워드<input type="password" name="pw"/> <br>
+    <input type="button" onclick="login()" value="로그인" />
+</body>
+<script>
+    
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        // var input = Number(prompt('숫자를 입력하세요.', '숫자'));
+        // console.log("입력된 데이터: "+input )
+        // // NaN : 실행 에러코드
+        // // 1. not a number 숫자형이 아닐 때, 나오는 에러
+        //         // 숫자형 문자열이 아닌데, Num()형변환 함수를 처리할 시 발생됨
+        // // 2. 숫자형이 아니므로 %나머지 연산자 처리가 안되어
+        // //      switch문에서는 default로 처리가 된다.
+        // // 조건문
+        // switch (input % 2) {
+        //     case 0:
+        //         alert('짝수입니다.');
+        //         break;
+        //     case 1:
+        //         alert('홀수입니다.');
+        //         break;
+        //     default:
+        //         alert('숫자가 아닙니다.');
+        //         break;
+        // }
+        window.onload=function(){
+            let grade = Math.floor(Math.random()*8+2);
+            let dan = Math.floor(Math.random()*9+1)
+            gop = grade*dan;
+            var h3Ob = document.querySelector("h3");
+            h3Ob.innerText=grade + " x " + dan
+            // + " = " + gop;
+            
+        }
+        function checkNum(){
+            var inObj = document.querySelector("[name=indata]");
+            var indata = Number(inObj.value);
+            console.log("입력된 객체:" + inObj)
+            console.log("입력된데이터:" + indata)
+            var gObj = document.querySelector("h4");
+            gObj.innerText = gop;
+            /*
+                ex) switch case문 이용해서 정답-오답일 때, 숫자를 입력하지 않을 때는 나누어서 alert()로 메시지 처리
+            */
+           switch(indata){
+                // case NaN:
+                //     alert("정답을 입력해주세요");
+                //     break;
+                case gop:
+                     alert("정답");
+                    break;
+                default:
+                    alert("오답");
+
+           }
+        }
+        
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">구구단</h2>
+    <h3 style="text-align: center;"></h3>
+    <p style="text-align: center;">정답을 입력하세요</p>
+    <input type="text" name="indata" value="" size="3" /><br>
+    <input type="button" value="정답확인" onclick="checkNum()"/>
+    <h4 style="text-align: center;">정답은?</h4>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2></h2>
+    <h2></h2>
+</body>
+    <script>
+        // // 변수를 선언합니다.
+        // var value = 0;
+        // // while 반복문
+        // while (value < 5) {
+        //     alert(value + '번째 반복');
+        //     value++;
+        // }
+
+        var stdCnt = 0;
+        var tot = 0;
+
+        while(true){
+            let addStd = Number(prompt("점수를 입력하세요. 중단하려면 -1입력"));
+            if(addStd >= 0){
+                stdCnt++;
+                tot += addStd;
+            }else if(addStd == -1){
+                alert("입력완료.");
+                break;
+            }else{
+                alert("데이터를 숫자형으로 0이상 입력하세요.");
+            }
+            let avg = tot/stdCnt;
+            document.body.innerHTML=`<h2>입력한 학생수: ${stdCnt}</h2>
+            <h2>총점: ${tot} 평균: ${avg}</h2>`
+        }
+    </script>
+</html>

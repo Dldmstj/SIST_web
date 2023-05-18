@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h2></h2>
+    <h2></h2>
+</body>
+    <script>
+        // // 변수를 선언합니다.
+        // var value = 0;
+        // // do while 반복문
+        // do {
+        //     // 조건에 맞지 않더라도 한 번은 수행해야할 필요가 있을 때 활용한다.
+        //     alert(value + '번째 반복문');
+        //     value++;
+        // } while (value < 5)
+
+        // ex) 컴퓨터가 임의로 구슬을 쥐게 하고 (1~5) 홀/짝을 입력하여 맞추면 승,
+            // 못 맞추면 맞출 때까지 do while문으로 처리
+
+            let bCnt = Math.floor(Math.random()*5 +1);
+            let cor = bCnt%2==0? "짝":"홀";
+            let cnt=0;
+            do{
+                var ans = prompt("홀/짝");
+                if(ans == cor){
+                    alert("정답!");
+                    cnt++;
+                    break;
+                }else{
+                    alert("다시");
+                    cnt++;
+                }
+            } while(ans != cor)
+            document.body.innerHTML = `<h2>컴퓨터 랜덤 수: ${bCnt}</h2>
+<h2>시도한횟수: ${cnt}</h2>`
+    </script> 
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // // 변수를 선언합니다.
+        // var array = ['포도', '사과', '바나나', '망고'];
+        // // for in 반복문
+        // for (var i in array) {
+        //     alert(array[i]);
+        // }
+    </script>
+</head>
+<body>
+
+</body>
+<script>
+    // for in 구문을 활용해서 배열로 구매할 물건의 가격 3가지를 선언하고, 물건명 3가지 배열과 함께 출력하세요
+    var pArr = ['감자','고구마','옥수수'];
+    var prArr = [1000,2000,3000];
+    for(var p in pArr) {
+        document.body.innerHTML += `<p>${pArr[p]}   ${prArr[p]}원</p>`
+    }
+</script>
+</html>

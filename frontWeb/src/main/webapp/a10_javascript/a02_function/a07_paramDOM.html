@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # DOM 객체 함수를 통해 매개변수로 전달 
+        */
+        function callDom(obj){
+            console.log(obj)
+        }
+
+        // h3 무지개 색상 7가지 리스트. 클릭시 글자색 변경, 중앙정렬 처리DOM 전달
+        function chColors(obj){
+            obj.align="center"
+            obj.style.color = "red"
+        }
+        function chColors(obj,color){
+            obj.align="center"
+            obj.style.color = color
+        }
+    </script>
+</head>
+<body>
+    <h3 onclick="chColors(this,'red')">빨</h3>
+    <h3 onclick="chColors(this,'orange')">주</h3>
+    <h3 onclick="chColors(this,'yellow')">노</h3>
+    <h3 onclick="chColors(this,'green')">초</h3>
+    <h3 onclick="chColors(this,'blue')">파</h3>
+    <h3 onclick="chColors(this,'navy')">남</h3>
+    <h3 onclick="chColors(this,'purple')">보</h3>
+    
+    <h2 onclick="callDom(this)">DOM객체 전달</h2>   <!-- 태그를 object화 한 것이 DOM-->
+
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        // document.querySelector("h2").innerText("");
+
+    </script>
+</html>

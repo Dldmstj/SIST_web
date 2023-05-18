@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // BOM vs DOM
+        // browser object moder : 윈도우창
+        window.onload = function () {
+            // 이벤트로 브라우저가 완전히 로딩된 후에 수행할 함수를 익명함수로 선언
+            // 변수를 선언합니다.
+            var list = '';
+            // 연산자를 사용합니다.
+            list += '<ul>';
+            list += '    <li>Hello</li>';
+            list += '    <li>JavaScript..!</li>';
+            list += '</ul>';
+            // 문서에 출력합니다.
+            /*
+                document: DOM
+                body. : body객체를 접근 <body></body> 지칭
+                .innerHTML : html태그를 해석해서 출력
+                .innerText : html태그를 해석하지 않고 출력
+            */
+            document.body.innerHTML = list;
+        };
+    </script>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    # javascript처리 흐름
+    1. 위에서부터 아래로 흘러서 처리된다.
+    2. 변수는 상단에 선언되어야 아래 라인에서 호출하여 사용할 수 있다.
+    3. DOM객체도 상단에 태그로 선언되어있어야 하단에 js코드로 인식을 할 수 있다.
+    4. 단, 아래와 같은 경우는 예외
+        1) 윈도우가 로딩된 후, 처리되는 이벤트 핸들러 함수가 있을 때는 
+            window.onload = function() {}
+        2) 변수형 함수가 아닌 선언적 함수인 경우에는 하단에 선언되어 있어도 호출이 가능
+            ex)
+                call();     // 상단 호출 불가
+                var call = function() {}    // 변수형 함수
+                call2();    // 상단 호출 가능
+                function call2(){}
+
+    */
+</script>
+</html>

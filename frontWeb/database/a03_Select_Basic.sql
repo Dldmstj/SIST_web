@@ -73,3 +73,13 @@ SELECT ename, sal, sal*0.2 "보너스(급여의 20%)" FROM emp;
 
 SELECT '사원의 이름은'||ename||'이고, 급여와 보너스의 합산은'|| (sal+sal*0.15)||'만원 입니다.' msg FROM emp;
 -- 문자열 안에 연산을 처리할 때는 ()로 우선 연산
+
+SELECT DISTINCT deptno FROM emp;	-- 중복되는 데이터를 제거하는 DISTINCT
+SELECT * FROM emp;	
+-- job과 mgr 각각 중복 데이터를 제거한 데이터내용을 리스트하세요
+SELECT DISTINCT job FROM emp;
+SELECT DISTINCT mgr FROM emp;
+-- distinct 컬럼1, 컬럼2
+-- 컬럼1과 컬럼2 두 개 모두를 비교해서 다른 데이터 로딩
+SELECT DISTINCT  job, deptno
+FROM emp;

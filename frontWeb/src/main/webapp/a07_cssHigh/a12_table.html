@@ -15,8 +15,15 @@
                 1) border: 표 테두리, border-bottom: 하단의 테두리 설정
                 2) border-collapse: collapse 기본 border cell 2중선을 없애는 옵션
                 3) height/width: td/th의 폭과 넓이 개별적 조정
+                	- 통일된 컬럼의 폭을 지정하는 방식
+                		css
+                		col width="@@%"
                 4) padding: 글자와 border간 여백 설정
                 5) text-align: td 셀 안에 글자의 정렬 처리
+                	ex) 게시판의 제목과 같이 어느정도 내용이 있는 것은 왼쪽 정렬
+                		크기가 고정되고 작은 데이터는 중앙 정렬
+                		숫자형으로 처리하는 데이터를 오른쪽 정렬
+                		위 padding과 함께 적절하게 데이터가 출력되게 정렬 처리
                 6) tr: nth-child(even|odd): 짝수/홀수 단위 행 단위 css옵션을 가상 클래스로 선언
                 7) tr: hover: 행 단위 커서를 위치시켰을 때 옵션 설정
         */

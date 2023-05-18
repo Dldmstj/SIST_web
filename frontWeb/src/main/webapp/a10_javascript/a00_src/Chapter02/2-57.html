@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // var변수는 어디에서 선언하든 전역변수로 사용된다.
+        // {} if, for, 함수, 객체 모두 적용됨
+        {
+            // 스코프 A
+            var variable = 273;
+        }
+        {
+            // 스코프 B
+            alert(variable);
+        }
+        // 전역 스코프
+        alert(variable);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

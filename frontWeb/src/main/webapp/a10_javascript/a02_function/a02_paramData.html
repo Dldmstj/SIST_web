@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        #  
+        */
+        function call01(num){
+            alert("숫자 " + num);
+        }
+        function call02(str){
+            alert("문자 " + str);
+        }
+        
+        // ex) h3으로 구매할 물건명을 표현하고 클릭시 물건의 가격을 alert로 표현
+        function call03(num){
+            alert("가격: " + num +"원");
+        }
+        
+        // ex) 회원명 리스트, 클릭시 해당 회원의 권한(관리자, 일반 사용자, 수퍼유저 )alert로 출력
+        var mgr = ['관리자','일반사용자','수퍼유저']
+        function call05(mgr){
+            alert("권한: " + mgr)
+        }
+        
+    </script>
+</head>
+<body>
+    <h4 onclick="call05(mgr[1])">짱구</h4>
+    <h4 onclick="call05(mgr[2])">짱구</h4>
+    <h4 onclick="call05(mgr[0])">짱구</h4>
+    <h4 onclick="call05(mgr[1])">짱구</h4>
+    <h4 onclick="call05(mgr[0])">짱구</h4>
+
+
+    <h3 onclick="call03(2000)">고구마</h3>
+    <h3 onclick="call03(3000)">감자</h3>
+    <h3 onclick="call03(1000)">옥수수</h3>
+    <h3 onclick="call03(2500)">토마토</h3>
+
+    <h2 onclick="call01(1)">매개변수 전달 연습</h2>
+    <h2 onclick="call01(2)">매개변수 전달 연습</h2>
+    <h2 onclick="call01(3)">매개변수 전달 연습</h2>
+    <h2 onclick="call02('사과')">매개변수 전달 연습</h2>
+    <h2 onclick="call02('감자')">매개변수 전달 연습</h2>
+    <h2 onclick="call02('고구마')">매개변수 전달 연습</h2>
+
+</body>
+    <script>
+        /*
+        # 함수의 매개변수 선언과 전달
+        1. 함수는 호출하는 곳에서 데이터를 전달하고 해당 데이터를 지역 변수로
+            여러가지 기능처리를 할 수 있다.
+        2. 기본형식 (1개 기본 데이터 유형 전달)
+            function call(num01) {
+                // 숫자형 매개변수 전달 되었을 때
+                alert("전달된 숫자: " + num01)
+            }
+        */
+        
+    </script>
+</html>

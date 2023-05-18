@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // ecma6 이후 버전에서만 지원하는 문자열 처리방식 `(백틱_ 오타아님)
+        /*
+        # 문자열 처리 특징
+        1. `` 사이에는 줄바꾸기가 자유롭다.
+        2. "+변수+" => ${변수명} 사용가능
+        */
+        // alert(`표현식 273 + 52의
+        //     값은 
+        //             ${52 + 273}입니다...!
+        // `);
+
+        var pname = "감자";
+        var price =3000;
+        var cnt = 5;
+        alert(`
+        물건명: ${pname}
+        가격: ${price}
+        갯수: ${cnt}
+        총 가격: ${price * cnt}원
+        `);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
