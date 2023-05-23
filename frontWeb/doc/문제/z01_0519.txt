@@ -1,0 +1,206 @@
+1. 다음 중 Connection 객체를 얻는 과정에서 사용되는 클래스는 무엇인가요?
+    - A. ResultSet
+    - B. DriverManager
+    - C. Statement
+    - D. DB
+	B
+	
+2. 다음 중 예외 처리가 필요한 JDBC 관련 작업은 무엇인가요?
+    - A. SQL 쿼리 작성
+    - B. DriverManager를 사용하여 DB 연결 
+    - C. SQL 쿼리의 결과 출력
+    - D. DB 연결 정보 문자열 작성
+	B
+	
+3. "jdbc:oracle:thin:@localhost:1521:xe" 문자열은 어떤 정보를 담고 있는가요?
+    - A. SQL 쿼리
+    - B. JDBC 드라이버 이름
+    - C. 데이터베이스 연결 정보
+    - D. 데이터베이스 사용자 이름과 비밀번호
+	C
+	
+4. 다음 중 ResultSet 객체가 반환하는 메소드는 무엇인가요?
+    - A. executeQuery()
+    - B. getConnection()
+    - C. next()
+    - D. createStatement()
+	C
+	
+5. DB 클래스의 con 메소드에서 예외가 발생할 경우 어떻게 처리하는가요?
+    - A. 예외를 무시한다.
+    - B. 예외 메시지를 출력한다.
+    - C. 프로그램을 종료한다.
+    - D. 예외를 다시 발생시킨다.
+	B
+	
+6. SQL 쿼리 결과를 가져오기 위해 사용되는 객체는 무엇인가요?
+    - A. Connection
+    - B. DriverManager
+    - C. Statement
+    - D. ResultSet
+	D
+	
+7. A02_EmpDao 클래스의 empListAll 메소드에서 사용하는 SQL 쿼리는 어떤 작업을 하는가요?
+    - A. 데이터베이스에 연결한다.
+    - B. 데이터베이스의 모든 데이터를 삭제한다.
+    - C. 데이터베이스의 특정 데이터를 수정한다.
+    - D. 데이터베이스의 모든 데이터를 조회한다.
+	D
+	
+8. 다음 중 JDBC에서 SQL 쿼리를 실행하는 객체는 무엇인가요?
+    - A. Connection
+    - B. DriverManager
+    - C. Statement
+    - D. ResultSet
+	C
+	// Statement 객체가 갖고있는 executeQuary()
+	// 메서드를 통해서 ResultSet객체 생성
+	// rs = stmt.executeQuary(sql);
+	
+9. 다음 중 DB에서 데이터를 가져올 때 다음 행으로 이동시키는 메소드는 무엇인가요?
+    - A. getRow()
+    - B. next()
+    - C. previous()
+    - D. moveToNext()
+	B
+	// rs.next() : 다음 행에 데이터 있는지 여부를 boolean
+	// 해당 위치에 cursor를 위치시켜 열단위 데이터를 가져온다
+	
+11. DB 클래스의 con 메소드가 성공적으로 데이터베이스에 연결하면 어떤 메시지를 출력하는가요?
+    - A. "DB 접속 실패"
+    - B. "DB 접속 성공"
+    - C. "클래스 예외"
+    - D. "DB 연결 불가"
+	B
+	
+12. 다음 중 ResultSet에서 데이터를 가져오는 메소드는 무엇인가요?
+    - A. get()
+    - B. extract()
+    - C. fetch()
+    - D. getInt() / getString() 등
+	D
+	rs.get타입("컬럼명")
+	rs.get타입(1,2,3,...) : select [1,2,3] from 테이블
+	
+13. SQL 쿼리를 실행한 후, 그 결과를 어떤 객체를 통해 가져오는가요?
+    - A. Connection
+    - B. DriverManager
+    - C. Statement
+    - D. ResultSet
+	D
+	Statement : 실행을 통해서 ResultSet객체를 만들어준다.
+	ResultSet은 데이터를 가져온 객체로 .next()	.getXXXX()를 통해 데이터의 결과를 가져온다.
+	
+	
+14. A02_EmpDao 클래스의 main 메소드에서 인스턴스화 되는 클래스는 무엇인가요?
+    - A. DB
+    - B. Connection
+    - C. ResultSet
+    - D. A02_EmpDao
+	D
+	instance : 참조한 변수를 지정하는 개념
+	A02_EmpDao dao = new A02_EmpDao();
+	
+15. 다음 중 JDBC에서 SQL 쿼리를 수행할 준비를 하는 객체는 무엇인가요?
+    - A. Connection
+    - B. DriverManager
+    - C. Statement
+    - D. ResultSet
+	C
+	stmt.executeQuery("select * from emp")
+	실제 sql을 처리하는 객체는 Statement이다.
+	
+16. 다음 중 Java에서 Oracle 데이터베이스에 연결하기 위해 사용하는 JDBC 드라이버의 이름은 무엇인가요?
+    - A. "jdbc.oracle.driver.OracleDriver"
+    - B. "java.jdbc.OracleDriver"
+    - C. "oracle.jdbc.driver.OracleDriver"
+    - D. "jdbc:oracle:thin:@localhost:1521:xe"
+	C
+	
+17. JDBC에서 사용하는 Statement 객체의 역할은 무엇인가요?
+    - A. 데이터베이스와의 연결을 관리한다.
+    - B. SQL 쿼리를 실행하고 그 결과를 받아온다.
+    - C. 데이터베이스에서 데이터를 가져와서 Java에서 사용할 수 있는 형태로 변환한다.
+    - D. 데이터베이스 연결 정보를 저장한다.
+	B
+	ResultSet rs = stmt.executeQuery("select * from [table]");
+	
+18. A02_EmpDao 클래스에서 연결(con), 대화(stmt), 결과(rs)는 각각 어떤 객체를 참조하는가요?
+    - A. Connection, Statement, ResultSet
+    - B. ResultSet, Connection, Statement
+    - C. Statement, ResultSet, Connection
+    - D. DriverManager, Connection, Statement
+	A
+	전역 변수로 사용객체
+	연결(Connection)
+	대화(Statement)
+	결과(ResultSet)
+	
+19. 다음 중 SQL 쿼리 결과를 업데이트하거나 조회하는 JDBC 클래스는 무엇인가요?
+    - A. Connection
+    - B. Statement
+    - C. ResultSet
+    - D. DriverManager
+	C
+	Statement : 쿼리를 실행해서 결과 ResultSet을 가져오는 객체
+	ResultSet : 결과를 가져와서 데이터를 처리해주는 객체. ResultSet안에 데이터를 가지고 있어서,
+				이것을 VO객체에 다시 할당하거나, 변경하는 등 여러가지 작업(조회)를 할 수 있는 객체
+	
+20. ResultSet의 next 메소드가 반환하는 값의 타입은 무엇인가요?
+    - A. int
+    - B. String
+    - C. boolean
+    - D. void
+	C
+	while(rs.next()) 행단위로 이동처리 다음 행에 데이터가 없을 때 false
+	
+21. 다음 중 Statement 객체를 생성하는데 사용되는 메소드는 무엇인가요?
+    - A. connect()
+    - B. execute()
+    - C. createStatement()
+    - D. next()
+	C
+	Connection객체는 con.createStatement()를 통해 Statement를 생성해준다.
+	Statement stmt = con.createStatement()
+	
+	
+22. "oracle.jdbc.driver.OracleDriver" 문자열은 어떤 역할을 하는가요?
+    - A. SQL 쿼리 작성
+    - B. JDBC 드라이버 로드
+    - C. 데이터베이스 연결 정보 설정
+    - D. 데이터베이스 사용자 인증
+	B
+	Class.forName("패키지.클래스명") : 물리적인 클래스를 프로그램의 객체로 로딩
+	각 데이터베이스 서버 회사에서 지원하는 압축된 @@@.jar들의 메인 클래스를 호출하여
+	데이터베이스 처리를 할 수 있게 하는 것이 driver. Class.forName()을 통해서 객체로 메모리에
+	로딩한다. DriverManager.getConnection() 사용할 수 있는 원인이 여기에 있음.
+	
+23. 다음 중 ResultSet에서 데이터를 가져오는데 사용되는 메소드는 무엇인가요?
+    - A. next()
+    - B. getResultSet()
+    - C. getInt(), getString() 등
+    - D. executeQuery()
+	C
+	실제 데이터를 가져오는 메서드 rs.getInt(), rs.getDouble(), rs.getString()
+	
+24. 다음 중 데이터베이스와의 연결을 종료하는 메소드는 무엇인가요?
+    - A. close()
+    - B. disconnect()
+    - C. end()
+    - D. terminate()
+	A
+	rs.close()
+	stmt.close()
+	con.close()
+	객체의 자원은 만들어진 역순위로 자원을 해제한다.
+		
+25. 다음 중 JDBC의 기본 작업 흐름으로 가장 적절한 순서는 무엇인가요?
+    - A. DriverManager.getConnection() -> Class.forName() -> Statement 생성 -> ResultSet 처리
+    - B. Class.forName() -> DriverManager.getConnection() -> Statement 생성 -> ResultSet 처리
+    - C. DriverManager.getConnection() -> ResultSet 처리 -> Class.forName() -> Statement 생성
+    - D. Class.forName() -> ResultSet 처리 -> DriverManager.getConnection() -> Statement 생성
+	B
+	클래스 드라이버 메모리 로딩 Class.forName()
+	Connection 객체 만들기 : DriverManager.getConnection()
+	Statement 객체 만들기 : Connection 객체의 createStatement()
+	ResultSet 객체 만들기 : Statement객체의 executeQuery(sql)

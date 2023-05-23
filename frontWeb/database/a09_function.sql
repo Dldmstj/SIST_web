@@ -30,6 +30,8 @@
  */
 -- 문자함수: 문자데이터를 입력하여 문자나 숫자를 결과로 반환하는 함수
 -- 1. initcap() : 문자의 첫 번째 문자만 대문자로 변환
+
+
 SELECT ename, INITCAP(ename), job, INITCAP(job) FROM EMP;
 -- ex) || 연결연산자, initcap()를 활용하여 [ename]is a [job]! 표현하기
 SELECT INITCAP(ename)||' is a ' ||initcap(job)||'!' info FROM emp; 

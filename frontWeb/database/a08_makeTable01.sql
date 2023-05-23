@@ -41,7 +41,7 @@ CREATE TABLE student01(
 	name varchar2(50),
 	point number
 );
-
+select * from dept01;
 INSERT INTO student01 values('짱구',70);
 INSERT INTO student01 values('맹구',80);
 INSERT INTO student01 values('훈이',50);
