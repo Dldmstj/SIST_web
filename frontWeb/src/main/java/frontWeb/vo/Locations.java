@@ -5,6 +5,7 @@ public class Locations {
 	private String street_address;
 	private String postal_code;
 	private String city;
+	private String country_id;
 	private String state_province;
 	
 	public Locations() {}
@@ -12,6 +13,19 @@ public class Locations {
 	public Locations(int location_id, String city) {
 		this.location_id = location_id;
 		this.city = city;
+	}
+	
+	public Locations(int location_id) {
+		this.location_id = location_id;
+	}
+
+	public Locations(String street_address, String postal_code, String city, String state_province, String country_id,int location_id) {
+		this.street_address = street_address;
+		this.postal_code = postal_code;
+		this.city = city;
+		this.country_id = country_id;
+		this.state_province = state_province;
+		this.location_id = location_id;
 	}
 
 	public Locations(int location_id, String street_address, String postal_code, String city, String state_province) {
@@ -60,6 +74,14 @@ public class Locations {
 
 	public void setState_province(String state_province) {
 		this.state_province = state_province;
+	}
+
+	public String getCountry_id() {
+		return country_id;
+	}
+
+	public void setCountry_id(String country_id) {
+		this.country_id = country_id;
 	}
 	
 	

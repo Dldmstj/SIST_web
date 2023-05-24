@@ -51,36 +51,4 @@ SELECT FIRST_NAME, UPPER(FIRST_NAME)이름A, LOWER(FIRST_NAME) 이름a  FROM EMP
 SELECT * FROM EMPLOYEES e WHERE LOWER(FIRST_NAME) LIKE '%a'; 
 SELECT * FROM EMPLOYEES e2 ;
 SELECT email, job_id FROM EMPLOYEES e WHERE LOWER(email) LIKE '%r'; 
-SELECT email, job_id FROM EMPLOYEES e WHERE LOWER(JOB_ID) LIKE '%r';
-
-/*
-	# 문자열 길이 반환
-1. length(데이터/컬럼) : 해당 데이터나 컬럼의 문자열 길이를 반환하는 함수
-2. lengthb(데이터/컬럼) : 입력되는 문자열의 바이트를 변환하는 함수
-	1) 영문은 글자 수와 byte는 같다
-	2) 한글은 한 글자에 3byte
-	cf) dual: 오라클에서 지원되는 임시 가상테이블로 데이터를 간단하게 확인할 때 사용
-	
- */
-
-SELECT '홍길동' name, LENGTHB('홍길동') "이름(byte)", LENGTH ('홍길동') "이름(글자수)" FROM dual; 
-SELECT ename, LENGTH(ename) "글자수",LENGTHB(ename) "byte크기", job, LENGTH(job) "직책길이",LENGTHB(ename) "byte크기" from emp02;
-
--- ex) 사원테이블에서 사원명과 직책의 글자수를 표현하되, 직책의 글자갯수가 6이상인 데이터만 출력하세요
-SELECT ename, LENGTH(ename) "글자 수", job, LENGTH(job) "글자수" FROM emp
-WHERE LENGTH(job) >= 6;
-/*
- 	# 기타 문자열 조작함수
- 1. concat(문자열1,문자열2) : 두 문자열을 결합처리한다
- 	문자열1 || 문자열2 와 동일한 기능
- 	문자열1 || 문자열2 || 문자열3 => concat(concat(문자열1,문자열2), 문자열3)
- 2. substr(문자열데이터, 시작위치(0부터),갯수(시작위치부터의))  
- 	문자열 데이터를 시작위치와 마지막 위치를 기준으로 절삭처리하여 사용하는 것을 말함.
- 	ex) substr('sql*plus',5,4) => plus 출력
- 			// 다섯번째부터 4개의 문자 출력처리
- */
-SELECT empno, ename, job, concat(ename,job) "이름과 직책" FROM emp02;
-SELECT SUBSTR('sql*plus',5,4) "데이터 추출" FROM dual; 
-
--- ex) 사원명과 사원번호를 이어서 표현하고, 직책은 2번째부터 3글자를 추출해서 출력하세요
-SELECT ename, empno, concat(ename,empno) "이름+사원번호", job, SUBSTR(job,2,3) "직책명 추출" FROM emp;
+SELECT email, job_id FROM EMPLOYEES e WHERE LOWER(JOB_ID) LIKE '%r'; 

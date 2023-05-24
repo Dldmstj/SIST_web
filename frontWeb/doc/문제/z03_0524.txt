@@ -1,0 +1,78 @@
+1. 다음 중 Java에서 PreparedStatement 객체를 생성하는 방법은 무엇인가요?
+A
+    A. con.prepareStatement(sql);
+    B. con.executePreparedStatement(sql);
+    C. con.createPreparedStatement(sql);
+    D. con.getPreparedStatement(sql);
+
+2. 다음 중 Java SQL 예외 처리에 대한 올바른 설명은 무엇인가요?
+A
+    A. try-catch 구문 내에서 SQLException을 처리한다.
+    B. SQL 에러를 방지하기 위해 예외를 처리하지 않는다.
+    C. SQL 예외는 항상 무시해야 한다.
+    D. SQLException은 RuntimeException 하위 클래스이다.
+     	// java.lang.Exception
+
+3. Java에서 SQL 쿼리 실행 결과를 담는 객체는 무엇인가요?
+C
+    A. Connection
+    B. PreparedStatement
+    C. ResultSet rs : select sql문일 때만 사용하는 객체
+    	rs = pstmt.executeQuery();
+    	// 초기에 sql을 입력했기에 pstmt에서는 sql 매개변수 필요 없다
+    	rs.next()
+    	rs.getString("컬럼명") select 컬럼명: 주의. select처리 결과의 컬럼명
+    	rs.getString(1) select 컬럼1, 컬럼2,... : 주의. select 처리 결과의 순서
+    D. SQLException
+
+4. PreparedStatement에서 쿼리의 특정 부분에 값을 설정하기 위해 사용하는 메서드는 무엇인가요?
+C
+    A. set()
+    B. put()
+    C. setString()
+    D. insert()
+    String sql = "select * from where ename=? and deptno=?"
+    
+    pstmt.setString(1,sch.getEname());
+
+5. 다음 중 DB 연결 후 필요한 작업에 대한 올바른 순서는 무엇인가요?
+A
+    A. Connection 객체 생성 → PreparedStatement 객체 생성 → SQL 쿼리 실행 → 결과 처리
+    B. PreparedStatement 객체 생성 → Connection 객체 생성 → SQL 쿼리 실행 → 결과 처리
+    C. SQL 쿼리 실행 → Connection 객체 생성 → PreparedStatement 객체 생성 → 결과 처리
+    D. 결과 처리 → SQL 쿼리 실행 → PreparedStatement 객체 생성 → Connection 객체 생성
+
+6. "con.setAutoCommit(false);" 이 코드의 목적은 무엇인가요?
+A
+    A. 자동으로 커밋되는 것을 방지하기 위해
+    B. DB 연결을 자동으로 종료하기 위해
+    C. SQLException을 자동으로 처리하기 위해
+    D. SQL 쿼리를 자동으로 실행하기 위해
+
+7. SQL 쿼리를 실행한 후, 어떤 작업을 마지막으로 수행해야 하나요?
+A
+    A. Connection, PreparedStatement, ResultSet을 닫는다.
+    B. 새로운 PreparedStatement를 생성한다.
+    C. 새로운 SQL 쿼리를 작성한다.
+    D. DB에 다시 연결한다.
+
+8. 다음 중 PreparedStatement 객체를 사용해 SQL 쿼리를 실행하는 방법은 무엇인가요?
+A
+    A. pstmt.executeQuery();
+    B. pstmt.executeSQL();
+    C. pstmt.runQuery();
+    D. pstmt.performQuery();
+
+9. Java에서 SQL 트랜잭션을 원상복구 하는 명령어는 무엇인가요?
+A
+    A. con.rollback();
+    B. con.restore();
+    C. con.reset();
+    D. con.undo();
+
+10. "rs = pstmt.executeQuery();" 이 코드의 목적은 무엇인가요?
+A
+    A. SQL 쿼리를 실행하고 그 결과를 ResultSet 객체에 저장하기 위해
+    B. SQL 쿼리를 저장하기 위해
+    C. PreparedStatement 객체를 초기화하기 위해
+    D. SQLException을 처리하기 위해

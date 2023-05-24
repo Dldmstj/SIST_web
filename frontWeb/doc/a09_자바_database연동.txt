@@ -113,8 +113,12 @@
 		4) sql inject에 대비한 PreparedStatement 객체
 			
 	3. 여러가지 sql활용 패턴
-		1) select
-		2) insert
+		1) select : 여러가지 sql 구문을 통해서 처리하는 내용
+		2) insert : 
+			모든 데이터 입력
+				insert into 테이블명 values(데이터1, 데이터2, ...)
+			특정 컬럼 데이터 입력
+				insert into 테이블명(컬럼명1, 컬럼명2) values(...)
 		3) update
 		4) delete
 		
@@ -268,3 +272,99 @@
 				List<VO> list = new ArrayList<VO>();
 			while(rs.next)
 				list.add(new VO(rs.getXXX(1), ... ));
+	
+	# 등록/수정/삭제 처리 순서
+	1. sql 확인
+			insert into emp02 values()
+		sql 작성
+			insert into emp02 values(?,?,?,?,to_date(?,'YYYY-MM-DD'),?,?,?)
+	2. VO객체 만들기
+		입력  VO/Map/배열
+		class Emp{	// 입력할 VO
+			private int empno;
+			private String ename;
+			private String job;
+			private int mgr;
+			private Date hiredate;
+			private String hiredateS;
+			private Double sal;
+			private Double comm;
+			private int deptno;
+			
+			생성자
+			getter/setter()
+		}
+	3. 매서드
+		public void insertEmp(Emp ins){
+			
+			String sql = "";
+			1. DB 연결
+				자동 autoCommit방지
+			2. PreparedStatement객체 생성
+			3. pstmt.setXXXX(1, ...)
+			4. 수행처리
+				pstmt.update()
+			5. 확정 commit()
+			6. 예외 발생시 rollback 처리
+			4. 메인에서 처리
+		}
+		
+	# 실무적용
+	1. 요구사항 정의
+		ex) 아이디와 패스워드를 입력해서 로그인 성공 여부 처리
+			아이디/패스워드/이름
+			성공시 @@님 로그인 성공
+			실패시 아이디는 인증된 계정이 아닙니다
+	2. ERD
+		회원테이블
+		아이디
+		패스워드
+		이름
+	3. 물리 설계 내용을 바탕으로 DB sql 테이블 생성 script로 테이블 생성
+		create table member20{
+			id varchar2(50) primary key,
+			pass varchar2(50),
+			name varchar2(50)
+		}
+	4. 샘플 데이터 입력
+		 insert into member20 values('himan', '7777','홍길동');
+		 # 회원가입
+		 insert into member20 values('higirl', '8888','홍리나',1000,'관리자',sysdate);
+	5. 업무 내용에 맞게 DAO 처리
+		 sql
+		 intsert into member20 values(?,?,?,?,?,sysdate)
+		 VO
+		 	날짜이외 생성자 추가
+		 메서드처리
+		 	- 데이터베이스 처리(연결, 대화, 결과)
+		 class MemberDao{
+		 	public Member login(String id, String pass){
+		 		Member m = null;
+		 		return m;
+		 	}
+		 }
+		 
+		 class ShopptingMall{
+		 	private MemberDao;
+		 	ShoppingMall(){
+		 		dao = new MemberDao();
+		 	}
+		 	void loginMenu(){ 	// 로그인 메뉴 처리
+		 		로그인 합니다. scanner 입력 처리
+		 		인증 될 때까지 처리하려면 while(true)로 처리
+		 		아이디 입력
+		 		패스워드를 입력
+		 		Member m = dao.login(id, pass);
+		 		if(m == null){
+		 			로그인 실패
+		 		} else{
+		 			m.getName() 님 로그인 성공하였습니다.
+		 		}
+		 	}
+		 	// 회원가입 메뉴 메서드
+		 	
+		 	// 회원관리 메뉴 메서드
+		 	public static void main(String args[]){
+		 		ShoppingMall sh = new ShoppingMall();
+		 	}
+		 }

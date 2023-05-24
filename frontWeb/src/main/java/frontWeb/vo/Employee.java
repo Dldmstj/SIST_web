@@ -11,7 +11,7 @@ public class Employee{
 	private Date hire_date;
 	private String job_id;
 	private double salary;
-	private double commition_pct;
+	private double commission_pct;
 	private int manager_id;
 	private int department_id;
 	
@@ -19,7 +19,7 @@ public class Employee{
 	public Employee() {}
 	
 	public Employee(int employee_id, String first_name, String last_name, String email, String phone_number,
-			Date hire_date, String job_id, double salary, double commition_pct, int manager_id, int department_id) {
+			Date hire_date, String job_id, double salary, double commission_pct, int manager_id, int department_id) {
 		this.employee_id = employee_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -28,7 +28,7 @@ public class Employee{
 		this.hire_date = hire_date;
 		this.job_id = job_id;
 		this.salary = salary;
-		this.commition_pct = commition_pct;
+		this.commission_pct = commission_pct;
 		this.manager_id = manager_id;
 		this.department_id = department_id;
 	}
@@ -82,11 +82,11 @@ public class Employee{
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	public double getCommition_pct() {
-		return commition_pct;
+	public double getCommission_pct() {
+		return commission_pct;
 	}
-	public void setCommition_pct(double commition_pct) {
-		this.commition_pct = commition_pct;
+	public void setCommission_pct(double commission_pct) {
+		this.commission_pct = commission_pct;
 	}
 	public int getManager_id() {
 		return manager_id;
