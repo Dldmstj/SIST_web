@@ -1,0 +1,94 @@
+1. 다음 중 SQL에서 문자의 첫 번째 문자만 대문자로 변환하는 함수는 무엇인가요?
+    - A) TO_UPPER()
+    - B) TO_LOWER()
+    - C) INITCAP()
+    - D) CAP_FIRST()
+C
+
+2. 다음 중 SQL에서 여러 행을 그룹화하여 그룹별로 결과를 반환하는 함수의 유형은 무엇인가요?
+    - A) 단일행 함수
+    - B) 복수행 함수
+    - C) 변환함수
+    - D) 일반함수
+B
+
+3. 다음 중 SQL에서 문자열 전체를 대문자로 변환하는 함수는 무엇인가요?
+    - A) UPPER()
+    - B) LOWER()
+    - C) INITCAP()
+    - D) CAPS()
+A
+
+4. 다음 중 SQL에서 대상 컬럼의 데이터 대문자/소문자로 전환할 때 주로 사용하는 함수는 무엇인가요?
+    - A) SWITCH()
+    - B) CHANGE()
+    - C) UPPER() 또는 LOWER()
+    - D) FLIP()
+C
+
+5. 다음 중 SQL에서 특정 문자열의 위치를 찾아주는 함수는 무엇인가요?
+    - A) FIND()
+    - B) SEARCH()
+    - C) INSTR()
+    - D) LOCATE()
+C
+
+6. 다음 중 SQL에서 문자열 데이터를 시작 위치와 마지막 위치를 기준으로 절삭 처리하는 함수는 무엇인가요?
+    - A) CUT()
+    - B) TRIM()
+    - C) SUBSTR()
+    - D) SLICE()
+B
+
+7. 다음 중 SQL에서 두 문자열을 결합처리하는 함수는 무엇인가요?
+    - A) CONCAT()
+    - B) CONNECT()
+    - C) COMBINE()
+    - D) JOIN()
+A
+
+8. 다음 중 SQL에서 함수2를 적용하고 함수1을 적용하여 중첩적으로 적용되는 것을 표현하는 용어는 무엇인가요?
+    - A) 중복함수
+    - B) 복합함수
+    - C) 중첩함수
+    - D) 복잡함수
+C
+
+9. 다음 중 SQL에서 문자열의 바이트 크기를 반환하는 함수는 무엇인가요?
+    - A) LENGTH()
+    - B) SIZE()
+    - C) BYTE()
+    - D) LENGTHB()
+D
+
+10. 다음 중 SQL에서 오른쪽에 있는 특정한 문자열을 삭제 처리하는 함수는 무엇인가요?
+    - A) LTRIM()
+    - B) RTRIM()
+    - C) TRIM()
+    - D) CUT()
+B
+    
+실습 문제:
+--1. EMP 테이블에서 사원명(ename)을 대문자로 출력하세요.
+	SELECT ename, UPPER(ename) FROM emp;
+
+--2. EMPLOYEES 테이블에서 사원번호(empno)가 100인 데이터의 이메일(email)을 소문자로 출력하세요.
+	SELECT EMPLOYEE_ID , email, LOWER(email) FROM EMPLOYEES WHERE EMPLOYEE_ID=100;
+
+--3. EMP 테이블에서 사원명(ename)과 부서명(department_name)을 연결한 결과를 출력하세요. 결과 컬럼 이름은 "이름/부서"로 지정하세요.
+	SELECT ename, DEPTNO, CONCAT(ENAME,DEPTNO)  "이름/부서" FROM emp;
+
+--4. EMP 테이블에서 직원명(ename)과 입사일(hire_date)을 연결한 결과를 출력하세요. 결과 컬럼 이름은 "이름/입사일"로 지정하세요.
+	SELECT ename, hiredate, CONCAT(ename, hiredate) "이름/입사일" FROM emp; 
+
+--5. EMP 테이블에서 입사일(hire_date)이 1981년인 데이터의 사원명(ename)과 입사일(hire_date)을 출력하세요.
+	SELECT ename, hiredate FROM emp WHERE HIREDATE = to_date('1981','YYYY');
+
+--6. EMPLOYEES 테이블에서 사원번호(empno)가 200 또는 300인 데이터의 이메일(email)과 직무(job_id)를 출력하세요.
+	SELECT email, job_id FROM EMPLOYEES WHERE EMPLOYEE_ID = 200 OR EMPLOYEE_ID = 300;
+
+--7. EMP 테이블에서 직원명(ename)을 출력하되, 이름의 앞뒤에 있는 공백을 제거한 결과를 출력하세요.
+	SELECT ename, TRIM(' ' FROM ename) FROM emp;
+
+--8. EMPLOYEES 테이블에서 이메일(email)에 "J"가 포함된 데이터의 사원명(ename)과 이메일(email)을 출력하세요.
+	SELECT FIRST_NAME, email FROM EMPLOYEES WHERE EMAIL LIKE '%J%';

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # setTimeout(function(){시간 후에 수행될 함수}, 시간)
+        1. var set01 = setTimeout(function(){
+
+            clearTime(set01);  // 자원해제
+        },5000) 
+        */
+        var h2Ob = document.querySelector("h2");
+        var set01 = setTimeout(function(){
+            alert("3초 후에 수행될 내용");
+            // 3초 후에 수행했기에 h2객체 DOM 인식
+            h2Ob.innerText="변경(3초 후)";
+            clearTimeout(set01);
+        clearTime(set01);  // 자원해제
+        },3000);
+
+        var cnt = 1;
+        var in01 = setInterval(()=>{
+            // 1초마다 수행할 내용을 
+            var h3Ob = document.querySelector("h3");
+            h3Ob.innerText = "카운트 업" + (cnt++);
+            if(cnt == 11){
+                alert("종료");
+                clearInterval(in01);
+            }
+        },1000);
+    </script>
+</head>
+<body>
+    <h2>타이틀</h2>
+    <h3>cnt</h3>
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

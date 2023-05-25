@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        // h3을 7개 선언하고, 시작하면 첫번째 h3부터 하나씩 안녕하세요 표시
+        
+        var idx =0;
+        var in01 = setInterval(()=>{
+            var h3Arr = document.querySelectorAll("h3");
+            var colArr = ["red","orange","yellow","green","blue","navy","purple"];
+            h3Arr[idx].style.color = colArr[idx];
+            h3Arr[idx].innerText = idx+1+") 안녕하세요";
+            idx++;
+            if(idx == 7){
+                clearInterval(in01);
+            }
+        },1000);
+    </script>
+</head>
+<body>
+    <h3>태그1</h3>
+    <h3>태그2</h3>
+    <h3>태그3</h3>
+    <h3>태그4</h3>
+    <h3>태그5</h3>
+    <h3>태그6</h3>
+    <h3>태그7</h3>
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

@@ -108,12 +108,84 @@
 			}
 		
 	3. 함수
-		1) 내장 함수
-		2) 사용자 정의 함수
-			function 함수명(매개변수...){
-				return 리턴 데이터
+		1) 사용자 정의 함수
+			변수형
+			var 함수명 = function(매개변수){
+				
+				프로세스 처리..
+				
+				return 리턴데이터;
 			}
-		
+				
+			선언적함수
+			function 함수명(매개변수...){
+				return 리턴데이터..
+			}
+			매개변수유형
+				- 데이터유형(number, string, boolean)
+					
+				- 데이터유형(object, function)
+					array(object에 포함)
+					function callArr(array){
+						for(var idx in array){
+							alert(array[idx])
+						}
+					}
+					<h1 onclick="callArr([1000,2000,3000])">
+						클릭하세요(배열전달)</h1>
+					function callObj(obj){
+						for(var pro in obj){
+							// pro : 객체의 속성
+							// obj[pro] : 객체의 값
+							alert(obj[pro])
+						}
+					}	
+					<h1 onclick="callObj({name:'홍길동',age:25})">
+						클릭하세요(객체전달)</h1>
+					function callDom(obj){
+						obj.align="center";
+						obj.style.color="blue";
+						obj.innerText="내용변경";
+					}	
+					<h1 onclick="callDom(this)">클릭하세요</h1>
+			매개변수의 갯수
+				- 없는 것
+				- 1개
+				- 2개 이상
+				- 가변적 매변변수 처리
+					arguments, 
+					...매개변수명(스프레스연산자 활용) :
+						매개변수를 배열로 설정해서 활용한다.
+			매개변수의 데이터 유형
+				- 일반 기본 데이터
+				- 배열형 [데이터1,데이터2,데이터3]
+				- 객체형 {속성:속성값}
+				- DOM   this
+		     
+	2) 내장 함수
+		- 시간관련
+			var set01 = setTimeout(function(){
+				// 시간 후, 처리할 내용을 코드로 처리
+
+				clearTimeout(set01);
+			},1/1000);
+			특정한 시간 이후에 수행되는 익명함수 지정
+			clearTimeout(set01); : 자원의 해제
+			var int01 = setInterval(function(){
+
+			},1.1000초)
+			반복적인 수행처리할 때, setInterval(function(){ 반복수행 내용 }, 반복할 시간);
+		- 형 변환
+			Number() : 정수/실수 다변환. 하지만 숫자형이 아니면 에러 발생
+			parseInt(): 시작 문자열이 숫자로 시작해서 끝날 때까지 추출해서 정수만 추출 형변환 처리
+			parseFloat() : 시작 문자열이 숫자로 시작해서 끝날때까지 추출하는데, 실수 추출 형변환 처리
+			eval() : 문자열을 실행 코드로 변환해서, 실행처리해주는 함수명
+				ex) eval(`
+					var num01 = 25;
+					var num02 = 30;
+					alert(num01+num02);
+				`)
+			JSON.parse("") : 문자열을 json객체로 변환 처리
 	4. 객체
 		1) 배열
 			var 배열명 = [데이터1, 데이터2,...]
