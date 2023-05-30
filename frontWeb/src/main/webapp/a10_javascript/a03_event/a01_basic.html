@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # 자바스크립트의 이벤트 처리
+        1. 웹프로그램에서 이벤트란?
+            front단에서 이벤트는 여러가지 동적인 처리를 사용할 때 활용된다.
+            화면에 특정 기능버튼을 클릭하는 내용, 데이터 입력시 처리되는 내용,
+            마우스 커서의 위치에 따른 내용 등으로 다양하게 처리된다.
+        2. 이벤트 처리를 위한 주요 구성요소
+            1) 이벤트 핸들러 함수
+            2) 이벤트
+            3) 대상객체
+            이벤트는 대상이 되는 DOM객체에 특정한 이벤트
+            (클릭, 데이터 입력, 마우스 커서 위치 이동 등)에 따라서
+                이벤트 핸들러 함수로 정의된 내용이 처리되는 것을 말함
+        3. 단계별 처리 내용
+            1) 기본 클릭 이벤트 처리
+            2) 매개변수 전달 처리 이벤트 처리
+            3) form 데이터 처리의 이벤트 처리
+                - 유효성 확인
+                - form 서버 전달 형식에 따른 내용 처리
+        4. 기본 형식
+            1) <태그 on이벤트명 ="이벤트핸들러함수()">
+            2) dom객체.on이벤트명=function(){
+                핸들러 함수 내용
+                }
+        */
+       var obj = document.querySelector("h2");
+        function call(){
+            alert("안녕하세요(이벤트 기초)")
+        }
+        function call02(){
+            obj.innerText = "객체전달 (매개변수)!"
+            obj.style.background = "yellow"
+        }
+        function call03(){
+            var h3Ob = document.querySelector("h3")
+            h3Ob.innerText="변경됩니당"
+            var num01Ob = document.querySelector("[name=num01]")
+            var num02Ob = document.querySelector("[name=num02]")
+            num01Ob.value = Math.floor(Math.random()*10 +1)
+            num02Ob.value = Math.floor(Math.random()*10 +1)
+        }
+        // 버튼 클릭시, 1~6 주사위가 임의로 출력되게 하세요
+        function dice(){
+            var h5Ob = document.querySelector("h5")
+            var inputOb = document.querySelector("[name=ranDice01]")
+            var num01 = Math.floor(Math.random()*6+1)
+            h5Ob.innerText = "주사위 값(html tag) : "+ num01
+            inputOb.value = num01
+        }
+    </script>
+</head>
+<body>
+    <h2 onclick="call()">기본 이벤트 처리</h2>
+    <h2 onclick="call02(this)">매개변수 전달, 이벤트</h2>
+    <h2 onclick="call03()">다른요소객체변경 이벤트</h2>
+    <h3>변경될 예정</h3>
+    첫번째 수 <input type="text" name="num01" /><br>
+    두번째 수 <input type="text" name="num02" /><br>
+    <br>
+    <h4 onclick="dice()">주사위 던지기</h4>
+    <h5>주사위 값(html tag) : </h5>
+    주사위값(inputbox) <input type="text" name="ranDice01"/>
+    <br>
+    <h3 id="varEvt01">변수 이벤트 핸들러(클릭!)</h3>
+    <h3 id="varEvt02">변수 이벤트 핸들러(클릭!)<정의된 이벤트 핸들러></h3>
+    <h3 class="h3Evt01">글자와 테두리를 바꾸는 이벤트 핸들러</h3>
+    <h3 class="h3Evt02">글자와 테두리를 바꾸는 이벤트 핸들러</h3>
+    
+</body>
+<script>
+    /*
+    # 변수로 이벤트 처리
+    1. DOM객체 .on이벤트 = 함수
+    */
+   
+   var varEvt01 = document.querySelector("#varEvt01")
+   var varEvt02 = document.querySelector("#varEvt02")
+   var h3Evt01 = document.querySelector(".h3Evt01")
+   var h3Evt02 = document.querySelector(".h3Evt02")
+
+   function call06(){
+       this.innerHTML="이벤트핸들러 할당!"
+       this.style.border="1px solid green"
+    }
+    function call05(){
+        alert("정의된 이벤트 핸들러!")
+        this.style.background="pink"
+    }
+   // DOM객체.onclick = function(){} 함수명이 없는 익명 이벤트 핸들러 함수처리
+       varEvt01.onclick=function(){
+           this.innerHTML="변수에 이벤트 핸들러 할당 처리"
+           this.style.color="navy";
+        }
+        // DOM객체.onclick = 함수명;
+        // 이벤트 핸들러 함수가 재활용할 수 있게 하기위해 상단에 정의된 함수 호출
+        varEvt02.onclick = call05();
+        // varEvt02.onclick = function(){
+        //     call05();
+        // }
+
+        // ex) DOM에 속성으로 클래스를 선언해서, 객체를 호출하고 이 DOM객체에 상단에 정의된
+        //  함수를 할당하여 글자와 테두리 굵기를 변경해보세요. style.border="1px solid green"
+    h3Evt01.onclick = function(){
+        this.innerHTML="이벤트핸들러 할당!"
+        this.style.border="1px solid green"
+    }
+    
+    h3Evt02.onclick = call06();
+    </script>
+</html>

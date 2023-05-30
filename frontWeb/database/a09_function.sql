@@ -46,6 +46,12 @@ SELECT '직책이 '||LOWER(job_id)||'인 '||UPPER(first_name)||'의 이메일은
 -- 1) 컬럼의 데이터를 대문자/소문자로 전환한다.
 -- 2) 대문자 변환 => 키워드도 대문자로 변경
 -- 3) 소문자 변환 => 키워드도 소문자로 변경
+/*
+  WHERE lower(FIRST_NAME) LIKE lower(?)
+  실제 DAO단 처리시, pstmt에는
+  pstmt.setString(1,"%"+emp.getFirst_name()+"%");
+ */
+
 SELECT FIRST_NAME, UPPER(FIRST_NAME)이름A, LOWER(FIRST_NAME) 이름a  FROM EMPLOYEES e;
 
 SELECT * FROM EMPLOYEES e WHERE LOWER(FIRST_NAME) LIKE '%a'; 

@@ -265,6 +265,18 @@
 					this.style.background = "yellow";
 					this.innerText = "클릭했습니다.";
 				}
+				
+				// 여러 DOM객체에 대한 접근
+				var h2Arr = document.querySelectorAll("h2")
+				
+				// forEach로 단위객체에 대한 선언 및 익명의 이벤트 핸들러 함수 선언
+				h2Arr.forEach(Function(h2Ob){
+					h2Ob.onclick=function(){
+					
+					// this: 이벤트를 클릭한 대상 h2를 지칭
+						this.innerText="클릭되었습니다!"
+					}
+				})
 	7. 비동기 통신 처리
 		1) ajax : backend단의 서버 구성요소와 접근해서 
 			데이터 처리해주는 형식	   	   

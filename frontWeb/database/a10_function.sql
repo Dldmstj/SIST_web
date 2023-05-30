@@ -8,6 +8,7 @@
  # instr(지정한 문자열 데이터 | 컬럼, '검색문자')
  1. 특정한 문자열을 검색해서 해당 문자열의 위치를 index로 반환처리하는 함수
  	ex) 주로 대용량의 문자열 데이터를 검색해서 해당 문자열의 첫 번째 위치를 index로 표현해준다.
+ 		없으면 0으로 나온다.
  2. 추가옵션
  	instr(데이터|컬럼, '검색문자', 시작위치, 검색된 횟수) 
  */
@@ -31,9 +32,12 @@ SELECT ename, job, instr(job,'MAN') POS FROM emp WHERE instr(JOB,'MAN')>0;
  	형식
  	lpad(데이터,크기, 왼쪽에 덧붙일 문자열)
  	rpad(데이터,크기,오른쪽에 덧붙일 문자열)
+ 	
+ 	가변형 데이터를 고정 데이터에 입력하거나 변할 때, lpad, rpad를 사용할 수 있다.
  */
 SELECT lpad('sql',5,'*') show1, rpad('sql',10,'#') show2 FROM dual;
 -- 사원명의 최대 크기 확인 후, 고정형으로 모르는 데이터는 *로 추가하여 데이터를 출력
+-- length() 문자의 갯수 => max() 최대크기 => 문자의 최대 크기
 SELECT max(Length(ename)) "최대크기" FROM emp;
 SELECT LENGTH(ename), ename FROM emp;
 SELECT ename,RPAD(ename,6,'*')"사원명" FROM emp; 

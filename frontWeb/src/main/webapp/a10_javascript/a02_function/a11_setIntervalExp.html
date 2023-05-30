@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        #  ex) 클릭시 table 1x5 cell 배경색상 1-> 5까지 갔다오기
+        */
+       var int01 = 0;
+
+        function start(){
+            var tdArr = document.querySelectorAll("td");
+            var idx = 0;
+            tdArr[idx].style.background="mistyrose";
+            var isFoward = true;
+            int01 = setInterval(()=>{
+                tdArr.forEach(function(ob){
+                    ob.style.background="white";
+                })
+                // index로 판별하면 증감처리기준을 변경할 수 없으므로 변수를 정해주어야 함
+                // go(증가조건-true, 감소조건-false)
+                if(idx==0){
+                    isFoward = true;
+                }
+                if(idx==4){
+                    isFoward = false;
+                }
+                if(isFoward){
+                    idx++;
+                }else{
+                    idx--;
+                }
+                tdArr[idx].style.background="mistyrose";
+                
+            },500);
+        }
+        function end(){
+            alert("종료!");
+            clearInterval(int01);
+        }
+    </script>
+</head>
+<body>
+    <h2 onclick="start()">시좍</h2>
+    <table width="300" height="300" border>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <h2 onclick="end()">종료</h2>
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

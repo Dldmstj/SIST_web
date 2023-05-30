@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        #  object <==> string
+        1. 객체와 문자열은 형변환을 통해서, 객체를 만들어 서버에 보낼 때는 문자열로 변환시키고
+            서버에서 받은 문자열은 다시 객체로 변환시켜서 활용할 수 있다.
+        2. 이 때 사용하는 함수가
+            JSON.parse("문자열 json") ==> 객체로 변환
+            JSON.stringify(객체) ==> 문자열 json데이터로 변환
+        */
+        function chStr01(){
+            var p01 = {name:"홍길동", age:25}
+            var h3Arr = document.querySelectorAll("h3")
+            h3Arr[0].innerText = JSON.stringify(p01)
+        }
+        function chStr02(){
+            var p02 = {pname:"감자", price:2000}
+            var h5Arr = docuh3Arment.querySelectorAll("h5")
+            h5Arr[0].innerText = JSON.stringify(p02)
+        }
+        function chObj01(){
+            var strObj = `[{"empno":7780,"enmae":"홍길동"},
+            {"empno":7790,"enmae":"김길동"}]`
+            console.log(strObj+":"+typeof(strObj))
+            var obj = JSON.parse(strObj)
+            var h3Arr = document.querySelectorAll("h3")
+            h3Arr[1].innerText = obj+":" +typeof(obj)+":"+obj[0].empno
+        }
+        function chObj02(){
+            // 좋아하는 영화제목과 관객수를 문자열 json데이터로 선언
+            // 객체 변환 후 h6에 출력
+            var strObj = `{"title":"극장판 짱구는 못말려: 동물소환 닌자 배꼽수비대","cnt":"68만"}`
+            console.log(strObj+":"+typeof(strObj))
+            var obj = JSON.parse(strObj)
+            var h3Arr = document.querySelectorAll("h3")
+            h3Arr[2].innerText = obj+":" +typeof(obj)+"\n 제목:"+obj.title+"\n 관객수:"+obj.cnt
+        }
+    </script>
+</head>
+<body>
+    <h2 onclick="chStr01()">문자열로 변환1</h2>
+    <h3>문자열변환1</h3>
+    <h4 onclick="chStr02()">문자열로 변환2</h4>
+    <h5>문자열변환2</h5>
+    
+    <h2 onclick="chObj01()">객체로 변환1</h2>
+    <h3>객체변환1</h3>
+    <h2 onclick="chObj02()">객체로 변환2</h2>
+    <h3>객체변환2</h3>
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

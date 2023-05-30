@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        #  
+        */
+    </script>
+    <style>
+        td{
+            text-align: center;
+            font-size: 30pt;
+        }
+    </style>
+</head>
+<body>
+    <h2>계산기</h2>
+    <table width="400pt" height="500pt" border="1" cellpadding="10px">
+        <col width=""25%><col width="25%"><col width="25%">
+        <tr><td style="text-align: right;" colspan="4">0</td></tr>
+        <tr><td>7</td><td>8</td><td>9</td><td>+</td></tr>
+        <tr><td>4</td><td>5</td><td>6</td><td>-</td></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>*</td></tr>
+        <tr><td>c</td><td>0</td><td>=</td><td>/</td></tr>
+    </table>
+
+</body>
+    <script>
+        var tdArr = document.querySelectorAll("td");
+        tdArr.forEach(function(tdOb){
+            tdOb.onclick=function(){
+                // 클릭한 레이블을 가져온다.
+                // alert(this.innerText);
+                if(this.innerText=='='){
+                    // tdArr[0].innerText에 있는 내용을 eval() 코드처리(연산)
+                    // tdArr[0].innerText 레이블로 출력
+                    tdArr[0].innerText=eval(tdArr[0].innerText)
+                }else if(this.innerText=='c'){
+                    tdArr[0].innerText="0"
+                }else{
+
+                    if(tdArr[0].innerText == '0'){
+                        tdArr[0].innerText = this.innerText;
+                    }else{
+                        tdArr[0].innerText += this.innerText;
+                    }
+            }
+            }
+        })
+    </script>
+</html>

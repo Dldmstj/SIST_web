@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # eval("문자열")
+        1. 문자열을 코드로 전환처리하여 실행함수
+
+        */
+        function exeCode(){
+            code01 = document.querySelector("#code01")
+            alert("코드실행 " +code01.value)
+            eval(code01.value)
+        }
+        function erase(){
+            calcu.value=""
+            calcu.focus()
+        }
+
+
+    </script>
+</head>
+<body>
+    <h2>연산식을 입력하세요</h2>
+    <textarea id="calcu" cols="20" rows="10"></textarea><br>
+    <input type="button" onclick="calc()" value="실행"/>
+    <input type="button" onclick="erase()" value="삭제"/>
+    <h3></h3>
+
+    <!-- ex) input에 입력한 내용(연산식)을 [합산] 눌렀을 때 계산된 결과가
+            아래에 입력된 내용과 함께 출력되게 하세요
+        [3*3+5] [계산]
+        3 * 3 + 5 14
+    -->
+</body>
+    <script>
+        /*
+        #  
+        */
+        function calc(){
+            var calcu = document.querySelector("#calcu")
+            // [3*4][계산]
+            // <input id="calcu" value=""/>
+            // 위와 같이 입력 후 함수를 호출하면, DOM객체를 호출하고,
+                // 가지고 있는 속성 value를 통해 입력값을 가져올 수 있다.
+            // eval(calcu.value)
+            var result = document.querySelector("h3")
+            result.innerText = calcu.value + " = " +eval(calcu.value)
+            // 하단에 DOM객체 호출
+            // innerText: 출력을 나타내는 속성
+            // show: 입력된 내용(3*4)
+            //" = " + eval(show) : 코드처리
+        }
+    </script>
+</html>

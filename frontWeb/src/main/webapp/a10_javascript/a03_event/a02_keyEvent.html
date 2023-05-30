@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # key 이벤트
+        1. 자판에 있는 키를 입력할 시 발생하는 이벤트를 말함
+        2. 자판에 있는 모든 키는 각각의 고유 키코드를 가지고 있다
+        3. 이 키 코드를 통해서 어떤 코드가 입력되고 있는지 구분하여 처리할 수 있다
+        4. key이벤트 종류
+            1) keydown: 키를 눌렀을 때
+            2) keyup: 키를 눌렀다가 떼었을 때
+                    주로 데이터를 처리할 때는 keyup이벤트 기준으로 할 때가 많음
+        */
+        window.onload=function(){
+            var tdArr = document.querySelectorAll("td")
+            tdArr.forEach(function(tdOb,idx){
+                tdOb.style.textAlign="center"
+                tdOb.style.fontSize="40pt"
+                tdOb.innerText=idx+1
+            })
+            var h2Obj = document.querySelector("h2")
+            h2Obj.align = "center"
+            var idx= 4;
+            
+            // 중앙으로(눌렀다가 떼었을 때)
+            // this: window 전체 화면 대상으로 이벤트가 발생했을 때
+            this.onkeyup=function(){
+                h2Obj.innerText = "키코드값: " +event.keyCode
+                // tdOb.style.background ="white"
+                // 키코드를 조건으로 방향이 변하게 처리
+                // tdArr[idx++].style.background="yellow"
+                
+                // 해당 방향으로(누르고 있는 상태)
+                this.onkeydown=function(){
+                tdArr[idx].style.background="white"
+                h2Obj.innerText = "키코드값: " +event.keyCode
+                if(event.keyCode == 38){
+                    tdArr[idx-=3].style.background ="yellow"
+                }else if(event.keyCode == 39){
+                    tdArr[idx+=1].style.background="yellow"
+                }else if(event.keyCode == 37){
+                    tdArr[idx-=1].style.background="yellow"
+                }else if(event.keyCode == 40){
+                    tdArr[idx+=3].style.background="yellow"
+                // tdArr[idx++].style.background="yellow"
+                }
+        }
+    }
+}
+    </script>
+</head>
+<body>
+    <h2>타이틀</h2>
+    <table align="center" width="300" height="300" border>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+    </table>
+
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

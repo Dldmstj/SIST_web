@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+  # 실습문제
+1. 문제: "7.8abc"에서 실수부만 추출하여 
+    숫자로 변환하고 이를 제곱하는 코드를 작성하세요.
+    */
+   alert(Math.sqrt(parseFloat("7.8abc")))
+/*
+2. 문제: 일정 시간 간격으로 화면에 "Loading..." 
+    메시지를 출력한 후 5번 출력하면 중지되도록 하는 코드를 작성하세요.
+  */
+  function loading(){
+            var h2Arr = document.querySelectorAll("h2");
+            var idx = 0;
+            var cnt = 1;
+
+            var arr = ['l','o','a','d','i','n','g','.','.','.']
+            h2Arr[idx].innerText = arr[idx];
+                int01 = setInterval(()=>{
+                    
+                    if(idx <= 9){
+                        idx++
+                    }else{
+                        clearInterval(int01);
+                    }
+                    
+                    h2Arr[idx].innerText = arr[idx];
+                },300);
+
+            }
+            
+    </script>
+</head>
+<body>
+    <h1 onclick="loading()">[클릭]</h1>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+    <h2 style="display: inline;"></h2>
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

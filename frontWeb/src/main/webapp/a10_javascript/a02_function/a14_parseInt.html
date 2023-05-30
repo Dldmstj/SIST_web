@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # parseInt()
+            1) 정수형 문자열을 정수로 변환
+            2) 실수형 문자열도 절삭해서 정수로 변환
+            3) 숫자로 시작하는 데이터는 뒤에 문자가 추가되기 전까지 숫자만 추출해서 형변환해준다.
+            4) 2진수, 8, 16진수 등을 10진수로 뱐환해준다.
+                parseInt(데이터, 진수) ==> 10진수로 변경
+        */
+        // alert( parseInt("25")+parseInt("5") )
+        // alert( parseInt("25.5")+parseInt("5.2") )
+        // alert( parseInt(Math.random() *6 + 1) )
+        // alert(parseInt("1000원") + parseInt("2000원"))
+        // alert( parseInt(Math.random() *6 + 1) )
+        // alert(parseInt(1010,2))
+        // alert(parseInt("1e",16))
+        alert(parseFloat("3.14PI")+parseFloat("5.7cm"))
+
+        // ex) prompt를 이용해서 물건의 가격(원), 갯수(개)을 가져와서 총비용을
+        //       h2 화면에 가격과 갯수를 출력하세요
+    </script>
+</head>
+<body>
+    <h2></h2>
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        var prd = prompt("물건의 가격을 입력하세요")
+        var cnt = prompt("물건의 갯수를 입력하세요")
+        var price = parseInt(prd) * parseInt(cnt);
+        var h2Oj = document.querySelector("h2");
+        h2Oj.innerText = parseInt(prd) + "원짜리 물건 " + parseInt(cnt) +"개 의 총 비용은? " +price +"원";
+    </script>
+</html>
