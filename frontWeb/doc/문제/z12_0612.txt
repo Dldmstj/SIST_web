@@ -1,0 +1,71 @@
+1. 다음 중 HttpServletResponse 객체에 대한 설명으로 틀린 것은 무엇인가요?
+   1) HttpServletResponse 객체는 클라이언트에 정보를 전달하는 데 사용된다.
+   2) HttpServletResponse 객체는 서버에서 클라이언트로 데이터를 전송할 때 사용된다.
+   3) HttpServletResponse 객체는 클라이언트에서 서버로 데이터를 전송할 때 사용된다.
+   4) HttpServletResponse 객체를 통해 데이터의 문자 인코딩 방식을 설정할 수 있다.
+3
+
+2. response.setCharacterEncoding("utf-8") 이후의 작업은 무엇인가요?
+   1) 클라이언트에 데이터를 전송한다.
+   2) 출력 스트림 객체를 생성한다.
+   3) HTML 코드를 처리하기 위한 설정을 한다.
+   4) 스트림 객체를 해제한다.
+3
+
+3. 다음 중 JSP 스크립트릿에 대한 설명으로 옳은 것은 무엇인가요?
+   1) JSP 스크립트릿은 자바 코드 및 로직이 처리되는 부분이다.
+   2) JSP 스크립트릿은 변수나 상수, 메서드를 선언하는 데 사용된다.
+   3) JSP 스크립트릿은 html에 변수나 메서드를 출력할 때 사용된다.
+   4) JSP 스크립트릿은 서버에서 처리되지 않는다.
+1
+
+4. 다음 중 service(request, response) 메서드와 관련있는 내장 객체는 무엇인가요?
+   1) out
+   2) session
+   3) request
+   4) 모두
+4
+
+5. 다음 중 JSP 주석에 대한 설명으로 틀린 것은 무엇인가요?
+   1) JSP 주석은 클라이언트에 전달되지 않는다.
+   2) JSP 주석은 서버단에서 처리된다.
+   3) HTML 주석과 비슷하게 클라이언트에 전달된다.
+   4) JSP 주석은 <!-- ... --> 형태로 표현된다.
+3,4
+// 3
+
+// 4
+<%-- ... --%>
+
+6. 다음 중 JSP의 스크립트 선언부에 대한 설명으로 옳은 것은 무엇인가요?
+   1) JSP가 Java로 변경될 때, 클래스명 밑에서 선언되는 부분이다.
+   2) JSP가 Java로 변경될 때, 메인 메서드에서 선언되는 부분이다.
+   3) 변수 할당 및 활용을 포함한다.
+   4) HTML 화면과 함께 로직 처리를 포함한다.
+1
+
+8. 다음 중 JSP의 스크립트 표현식에 대한 설명으로 틀린 것은 무엇인가요?
+   1) JSP의 스크립트 표현식은 <%=변수/메서드%> 형식으로 사용된다.
+   2) HTML과 혼합해서 출력할 때 사용된다.
+   3) JSP의 스크립트 표현식은 메인 메서드에서 처리되는 실제 화면을 구현하는 부분이다.
+   4) JSP의 스크립트 표현식은 자바 코드나 로직이 처리되는 부분이다.
+4
+
+9. session.setAttribute("s01", "himan")이 실행된 후, session.getAttribute("s01")의 반환 값은 무엇인가요?
+   1) "himan"
+   2) "s01"
+   3) Null
+   4) Error
+1
+setAttribute는 name, value 쌍으로 객체 Object를 저장하는 메서드.
+메서드 setAttribute에 이용한 name을 알고 있으면
+String valeu = (String)session.getAttribute("name");
+와 같이 조회할 수 있다.
+
+10. response.getWriter()는 어떤 타입의 객체를 반환하나요?
+    1) HttpServletResponse
+    2) HttpServletRequest
+    3) PrintWriter
+    4) String
+ 3
+ // PrintWriter out = response.getWriter();

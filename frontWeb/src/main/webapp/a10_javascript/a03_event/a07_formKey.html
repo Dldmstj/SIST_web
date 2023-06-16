@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+	/*
+		# from에 입력처리되는 key이벤트
+		1. 유효성 처리
+			1) 입력 여부
+			2) 값의 크기 유효성 처리
+	*/
+	</script>
+</head>
+<body>
+	<h2>form 하위요소 key이벤트 처리</h2>
+	이름<input type="text" name="name" />
+	<span id="validId"></span><br>
+	
+	<textarea rows="10" cols="50" name="txtArea">
+	</textarea><br>
+	<span id="validtxtArea"></span><br>
+	
+	아이디<input type="text" name="inputId" placeholder="아이디를 입력하세요(8~16)" /><br>
+	<span id="inputId"></span><br>
+</body>
+	<script type="text/javascript">
+		var nameOb = document.querySelector("[name=name]");
+		// 이름 항목에 입력된 글자 수를, 키를 입력할 때마다 출력표시
+		var validIdOb = document.querySelector("#validId");
+			// 이름 항목에 입력된 글자 수를 키를 입력할 때마다 출력표시
+			// DOM객체.onkeyup : 해당 키를 입력처리하는 이벤트
+			// = function(){} : 처리되는 이벤트 핸들러 함수
+		nameOb.onkeyup=function(){
+			validIdOb.innerText="입력된 글자 수: " + nameOb.value.length+"자";
+			
+		}
+		// textarea를 만들고 @@/20자 표시를 만들어보세요. 전체 입력할 수 있는 글자수 처리
+		var txtOb= document.querySelector("[name=txtArea]");
+		var validtxtOb = document.querySelector("#validtxtArea");
+		txtOb.onkeyup=function(){
+			var cnt = this.value.length
+			validtxtOb.innerText="입력된 글자 수: " + cnt +"/25";
+			if(cnt > 25){
+				this.value = this.value.substring(0,24)
+				this.style.background="red";
+			}else{
+				this.style.background="white"
+			}
+		}
+		// 아이디 입력 [span]
+		// 글자수 8~16자
+		var idOb= document.querySelector("[name=inputId]");
+		var inputIdOb = document.querySelector("#inputId");
+		idOb.onkeyup=function(){
+			var cnt = this.value.length
+			inputIdOb.innerText="입력된 글자 수: " + cnt;
+			if(cnt <8||cnt>16){
+				inputIdOb.innerText+="\n아이디는 8~16자로 입력해주세요."
+				inputIdOb.style.color="red";
+				this.value = this.value.substring(0,15)
+			}else{
+				inputIdOb.innerText+="\n유효한 아이디입니다."
+				inputIdOb.style.color="black"
+			}
+		}
+	</script>
+</html>

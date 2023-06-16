@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+// 1. 문자열에서 소문자와 대문자가 섞여 있는 경우에 대하여 
+//      대소문자 구분 없이 특정 문자를 찾아내는 정규 표현식을 작성하세요.
+//     ex) var str = "AppleBananaCherry";
+
+        var pattern = /banANa/i
+		var str = "AppleBananaCherry";
+		var result = pattern.exec(str)
+		console.log("# exec() #")
+		console.log("결과: " +result)
+		if(result){
+			console.log("banana 있음")
+		}else{
+			console.log("banana 없음")
+		}
+
+        // 2. 객체의 배열을 만들고,
+        // 이 객체에는 사람들의 이름(name)과 나이(age)가 들어가야 합니다. 
+        // 이후 해당 배열에서 forEach를 사용하여
+        // 나이가 25세 이상인 사람들의 이름을 출력하는 코드를 작성하세요.
+        var pArr =[]
+        pArr.push({ename:"짱구", age:5})
+        pArr.push({ename:"신형만", age:35})
+        pArr.push({ename:"나미리", age:27})
+        pArr.forEach((p,idx)=>{
+            tdOb.innerHTML += `<td>${idx+1}</td><td>${emp.empno}</td><td>${emp.ename}</td><td>${emp.sal}</td>`
+        })
+    </script>
+</head>
+<body>
+    <h2>타이틀</h2>
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

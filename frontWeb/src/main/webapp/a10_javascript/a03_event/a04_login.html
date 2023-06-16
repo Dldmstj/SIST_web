@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        
+        id/pw 입력 -> DOM객체에 접근, 내용이 있는지 여부를 js로 검사 (document.querySelector/선택자)
+		form객체의 여러 속성
+		- onsumit의 목적지: action(대부분 jsp, 혹은 자바에서 지원하는 코드)
+		{key:value}
+			↓↓↓ 서버로 전달 ↓↓↓
+		DAO, DB상에서 값 비교해서 data 유효성 return
+
+		# web server
+            vscode 지원서버: front단만 해석해서 client에 전달
+        # web application
+            tomcat()
+        // ex) a04_login.html 아이디 패스워드 화면 만들어서,
+                둘 다 입력됐을 때 전송, 그렇지 않으면 focus()
+        
+        
+        */
+        function ckLogin(){
+            var idObj = document.querySelector("[name=inputId]")
+            var pwObj = document.querySelector("[name=inputPw]")
+            
+            if(idObj.value == ""){
+                alert("아이디가 입력되지 않았습니다.")
+                idObj.focus()
+                return false;
+            }else if(pwObj.value ==""){
+                alert("패스워드가 입력되지 않았습니다.")
+                pwObj.focus()
+                return false;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>login</h2>
+    <form action="a05_result.jsp" onsubmit="ckLogin()">
+        아이디<input type="text" name="inputId" placeholder="아이디를 입력하세요" /><br>
+        패스워드<input type="password" name="inputPw" placeholder="패스워드를 입력하세요" /><br>
+        <input type="submit" value="로그인"/>
+    </form>
+
+</body>
+    <script>
+        /*
+        #  
+        */
+        
+    </script>
+</html>

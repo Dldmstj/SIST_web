@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	/*
+		#
+	*/
+	</style>
+</head>
+<body>
+	<div id="div01" style="width:200px; height:200px;
+		border:1px solid green">
+	</div>
+	<br><br><br><br>
+	<div>
+	<!-- 
+		1. 화면 구성
+		2. DOM객체 메모리 로딩 (선언)
+		3.대상 DOM 객체 이벤트 선언(이벤트 핸들러 함수 할당)
+		4.이벤트에 의해 처리될 내용 코드 구현
+	 -->
+	물건 등록<input id="inputPrd" placeholer="물건명을 입력하세요."/><br>
+	<h4>등록리스트<h4>
+	<span id="prdList"></span>
+	</div>
+</body>
+	<script type="text/javascript">
+		var div01Ob = document.querySelector("#div01")
+			div01Ob.style.textAlign="center";
+		div01Ob.onmouseover=function(){
+			this.style.background="yellow";
+			this.innerText="마우스오버 이벤트";
+		}
+		div01Ob.onmouseout=function(){
+			this.style.background="pink";
+			this.innerText="마우스아웃 이벤트";
+		}
+		div01Ob.ondblclick=function(){
+			this.style.background="#CEE3F6";
+			this.innerText="더블클릭 이벤트";
+		}
+		
+		// 물건등록 [    ] : 마우스 오버/아웃에 따라 배경색상 변경
+		// 입력 후 더블클릭 시, 하단에 등록리스트에 추가
+		// 등록리스트
+		// @@@
+		
+		var prdOb = document.querySelector("#inputPrd")
+		var plistOb = document.querySelector("#prdList")
+		var h4Obj = document.querySelector("h4")
+		prdOb.style.background="white"
+		prdOb.onmouseover=function(){
+			this.style.background="mistyrose"
+		}
+		prdOb.onmouseout=function(){
+			this.style.background="pink";
+		}
+		h4Obj.ondblclick=function(){
+			plistOb.innerText += prdOb.value +"\n";
+		}
+	/*
+		# 마우스 이벤트
+		1. 마우스 커서 위치에 따른 이벤트 처리할 때 주로 사용된다
+		2. 종류
+			mouseover: 해당 DOM객체 위치에 마우스 커서가 있을 때
+			mouseout: 해당 DOM객체 위치에 마우스 커서가 있다가 벗어 났을 때
+			click: 클릭 시
+			dblclick: 두 번 클릭시
+	*/
+	</script>
+</html>

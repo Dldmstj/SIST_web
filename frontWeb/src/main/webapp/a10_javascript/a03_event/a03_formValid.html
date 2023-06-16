@@ -9,14 +9,43 @@
         1. form은 프러그래머가 가장 많이 활용하는 데이터 처리 방법 중 하나
         2. front단에서 서버단에 데이터를 전송할 때 입력하는 태그의 요소 내용
         3. 서버에 전달되기 전에 front단에서 유효성 체크를 할 때 js를 주로 활용
-        
+        4. 접근할 DOM객체와 속성들
+            1) 전송하기 직전 이벤트 핸들러 선언
+                <form onsumit="이벤트 핸들러">
+                form 요소 가운데 <input type="submit"이 서버에 form에 소속된 요소객체들을
+                name="키" value="값" 형식으로 전달하는데, 최종적으로 전송 전 처리할 내용에 대해 이벤트핸들러를 선언
+                - 보통 필수 데이터 입력 유무나 형식이 맞는지 등에 대한 처리를 하는 것이 일반적임
+            2) 위 내용을 type="submit"를 type="button"으로 처리하고, 해당 버튼을 클릭시,
+                유효성을 다시 check하고 문제가 없다면 document.querySelector("form").submit()으로 처리하는 경우도 있다.
+
         */
-        
+       function ckSendData(){
+        // alert("서버 전송 전 마지막 점검")   // ?name=홍길동 으로 전송처리
+        var nameOb = document.querySelector("[name=name]")
+        var ageOb = document.querySelector("[name=age]")
+
+        if(nameOb.value==""){
+            alert("이름이 입력되지 않았습니다.")
+            nameOb.focus();
+            return false;
+        }
+
+        if(ageOb.value==""){
+            alert("나이가 입력되지 않았습니다.")
+            ageOb.focus();
+            return false;
+        }
+       }
+    
     </script>
 </head>
 <body>
     <h2>타이틀</h2>
-
+    <form onsubmit="ckSendData()">
+        이름 <input type="text" name="name" placeholder="이름을 입력하세요"/><br>
+        나이 <input type="text" name="age" placeholder="이름을 입력하세요"/><br>
+        <input type="submit" value="서버에 전송"/>
+    </form>
 </body>
     <script>
         /*

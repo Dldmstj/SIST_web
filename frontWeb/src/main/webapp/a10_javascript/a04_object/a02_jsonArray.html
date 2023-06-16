@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+    <script>
+        /*
+        # json 객체의 배열형 데이터 처리 
+        1. json 객체 선언 형식
+            var 객체명 ={속성:속성값, ...}
+        2. 객체형 배열
+            1) 선언/객체 생성
+                var arr1 = []
+                var arr2 = [{name:"사과", price:1200}, {name:"바나나", price:4500}]
+            2) 추가 할당
+                arr1[0] = {name:"홍길동", age:25}
+                arr2.push({name:"오렌지", price:2000})
+                배열.push(객체) : 마지막에 추가
+            3) 배열 객체의 호출
+                arr1[0] == {name:"홍길동", age:25}
+                arr1[0].name : 홍길동
+                var pro1 = arr2[1]  //  {name:"바나나", price:4500}
+                pro1.price  // 4500
+            4) forEach를 통한 처리
+                arr2.forEach((fruit)=>{
+                    fruit.name  // 반복문 단위객체를 가져와서 사용
+                    fruit.price
+                })
+        */
+        
+    </script>
+</head>
+<body>
+    <h2>json 객체</h2>
+    <h3></h3>
+    <h3></h3><br>
+    <h2>과일 객체명</h2>
+    <h3 id="fruit"></h3>
+    <h3 id="fruit"></h3><br>
+    <h2>과일 객체(forEach)</h2>
+    <div id="show"></div><br>
+    <h2>사원 정보</h2>
+    <table border>
+        <thead>
+            <tr><th>no</th><th>사원번호</th><th>사원명</th><th>급여</th></tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+    <script>
+        // ex) json배열로 사원객체 배열로 사원정보 3개를 만들고, 위 테이블 list 정보에 출력하세요
+        var empArr =[]
+        empArr.push({empno:1001, ename:"짱구", sal:3000})
+        empArr.push({empno:1002, ename:"맹구", sal:4000})
+        empArr.push({empno:1003, ename:"훈이", sal:2000})
+        var tdOb = document.querySelector("tbody")
+        empArr.forEach((emp,idx)=>{
+            tdOb.innerHTML += `<td>${idx+1}</td><td>${emp.empno}</td><td>${emp.ename}</td><td>${emp.sal}</td>`
+        })
+
+        var arr1 = []  // 객체 생성
+        arr1[0] = {name:"짱구", age:5}
+        arr1.push({name:"맹구", age:5})
+        var h3Arr = document.querySelectorAll("h3")
+        h3Arr[0].innerText=arr1[0].name+"," + arr1[0].age
+        h3Arr[1].innerText=arr1[1].name+"," + arr1[1].age
+
+        // arr2로 배열 선언 후, 과일 객체를 2개 할당하여 출력하세요
+        var arr2 = []
+        arr2[0] = {name:"사과", price:1500}
+        arr2.push({name:"포도", price:6000})
+
+        var fArr = document.querySelectorAll("#fruit")
+        fArr[0].innerText=arr2[0].name+": "+arr2[0].price +"원"       
+        fArr[1].innerText=arr2[1].name+": "+arr2[1].price +"원" 
+
+        var showOb = document.querySelector("#show")
+        arr2.forEach((fruit,idx)=>{
+            showOb.innerHTML +=`<h3>${idx+1}) ${fruit.name}: ${fruit.price}원</h3>`
+        })
+        
+    </script>
+</html>
